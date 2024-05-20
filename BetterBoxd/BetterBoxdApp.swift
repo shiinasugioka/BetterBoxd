@@ -1,0 +1,17 @@
+//
+//  BetterBoxdApp.swift
+//  BetterBoxd
+//
+//  Created by stlp on 5/20/24.
+//
+
+import SwiftUI
+
+@main
+struct BetterBoxdApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
