@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */; };
-		DB419A972BFBC0FF00C676FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB419A962BFBC0FF00C676FC /* ContentView.swift */; };
 		DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A982BFBC10200C676FC /* Assets.xcassets */; };
 		DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */; };
 		DBE4C0B02C01368D001B06CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0AF2C01368D001B06CA /* Constants.swift */; };
@@ -19,7 +18,6 @@
 /* Begin PBXFileReference section */
 		DB419A912BFBC0FF00C676FC /* BetterBoxd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterBoxd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterBoxdApp.swift; sourceTree = "<group>"; };
-		DB419A962BFBC0FF00C676FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB419A982BFBC10200C676FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DBE4C0AF2C01368D001B06CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 				DBE4C0A92C01361E001B06CA /* Utils */,
 				DBE4C0A82C01360D001B06CA /* Views */,
 				DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */,
-				DB419A962BFBC0FF00C676FC /* ContentView.swift */,
 				DB419A982BFBC10200C676FC /* Assets.xcassets */,
 				DB419A9A2BFBC10200C676FC /* Preview Content */,
 			);
@@ -211,7 +208,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBE4C0B52C013838001B06CA /* HomePage.swift in Sources */,
-				DB419A972BFBC0FF00C676FC /* ContentView.swift in Sources */,
 				DBE4C0B32C01380A001B06CA /* NavBar.swift in Sources */,
 				DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */,
 				DBE4C0B02C01368D001B06CA /* Constants.swift in Sources */,
