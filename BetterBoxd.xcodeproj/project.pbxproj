@@ -11,6 +11,7 @@
 		DB419A972BFBC0FF00C676FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB419A962BFBC0FF00C676FC /* ContentView.swift */; };
 		DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A982BFBC10200C676FC /* Assets.xcassets */; };
 		DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */; };
+		DBE4C0B02C01368D001B06CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0AF2C01368D001B06CA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		DB419A962BFBC0FF00C676FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DB419A982BFBC10200C676FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DBE4C0AF2C01368D001B06CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,10 @@
 		DB419A932BFBC0FF00C676FC /* BetterBoxd */ = {
 			isa = PBXGroup;
 			children = (
+				DBE4C0AB2C01363A001B06CA /* Models */,
+				DBE4C0AA2C013625001B06CA /* Resources */,
+				DBE4C0A92C01361E001B06CA /* Utils */,
+				DBE4C0A82C01360D001B06CA /* Views */,
 				DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */,
 				DB419A962BFBC0FF00C676FC /* ContentView.swift */,
 				DB419A982BFBC10200C676FC /* Assets.xcassets */,
@@ -65,6 +71,59 @@
 				DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DBE4C0A82C01360D001B06CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DBE4C0AE2C013673001B06CA /* MoviesPage */,
+				DBE4C0AD2C01366D001B06CA /* ProfilePage */,
+				DBE4C0AC2C013665001B06CA /* HomePage */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DBE4C0A92C01361E001B06CA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DBE4C0AF2C01368D001B06CA /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DBE4C0AA2C013625001B06CA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DBE4C0AB2C01363A001B06CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DBE4C0AC2C013665001B06CA /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		DBE4C0AD2C01366D001B06CA /* ProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProfilePage;
+			sourceTree = "<group>";
+		};
+		DBE4C0AE2C013673001B06CA /* MoviesPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MoviesPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +198,7 @@
 			files = (
 				DB419A972BFBC0FF00C676FC /* ContentView.swift in Sources */,
 				DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */,
+				DBE4C0B02C01368D001B06CA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

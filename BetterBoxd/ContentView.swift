@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  BetterBoxd
 //
-//  Created by stlp on 5/20/24.
+//  Created by Shiina on 5/20/24.
 //
 
 import SwiftUI
