@@ -9,7 +9,9 @@ import SwiftUI
 
 struct HomePage: View {
     var body: some View {
-        Text("this is the home page")
+        VStack {
+            Text("this is the home page")
+        }
     }
 }
 
