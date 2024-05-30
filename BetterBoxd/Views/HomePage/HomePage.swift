@@ -5,6 +5,8 @@ struct HomePage: View {
 
     var body: some View {
         NavigationView {
+        ZStack {
+            Color.darkBlue.edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     // Popular Movies
@@ -23,6 +25,7 @@ struct HomePage: View {
                 }
             }
             .navigationTitle("Home")
+        }
         }
     }
 }

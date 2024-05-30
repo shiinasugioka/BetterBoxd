@@ -98,8 +98,11 @@ struct MoviesPage: View {
 }
 struct MovieCard: View {
     let movie: Movie
-    
+
     var body: some View {
+    ZStack {
+    Color.darkBlue.edgesIgnoringSafeArea(.all)
+
         VStack {
             if let url = movie.posterURL {
                 AsyncImage(url: url) { image in
@@ -118,11 +121,12 @@ struct MovieCard: View {
             }
         }
     }
+    }
 }
 
 struct MovieHighlightCard: View {
     let movie: Movie
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -141,12 +145,12 @@ struct MovieHighlightCard: View {
                         .frame(width: 100, height: 150)
                         .cornerRadius(10)
                 }
-                
+
                 VStack(alignment: .leading, spacing: 8) {
                     Text(movie.title)
                         .font(.title3)
                         .bold()
-                    
+
                     Text(movie.overview)
                         .font(.body)
                         .lineLimit(6)

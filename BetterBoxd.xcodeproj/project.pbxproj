@@ -101,7 +101,7 @@
 		DBE4C0A92C01361E001B06CA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DBE4C0AF2C01368D001B06CA /* Constants.swift */,
+				DBE4C0AF2C01368D001B06CA /* Colors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -224,7 +224,7 @@
 				BB6067992C09174500F9195A /* MovieDetailView.swift in Sources */,
 				DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */,
 				DBE4C0B92C0683DA001B06CA /* ProfilePage.swift in Sources */,
-				DBE4C0B02C01368D001B06CA /* Constants.swift in Sources */,
+				DBE4C0B02C01368D001B06CA /* Colors.swift in Sources */,
 				DBE4C0B72C0683CD001B06CA /* MoviesPage.swift in Sources */,
 				BB121E672C08FB8100D00A5E /* MoviesViewModel.swift in Sources */,
 			);
