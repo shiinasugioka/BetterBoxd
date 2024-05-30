@@ -35,10 +35,19 @@ struct MainView: View {
                     Text("Profile")
                 }
             }
-            .toolbarBackground(Material.ultraThin, for: .tabBar)
-            .toolbarBackground(.visible, for: .tabBar)
         }
         .accentColor(.foregroundWhite)
+        .onAppear {
+            let appearance = UITabBarAppearance()
+            appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+            appearance.backgroundColor = UIColor(Color.darkBlue.opacity(0.2))
+            
+            appearance.shadowColor = UIColor(Color.salmonPink)
+            
+            UITabBar.appearance().standardAppearance = appearance
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+            
+        }
     }
 }
 

@@ -11,7 +11,7 @@ extension Color {
     static let darkBlue = Color(hex: "#272838")
     static let foregroundWhite = Color(hex: "#F9F8F8")
     static let yellow = Color(hex: "#F3DE8A")
-    static let pink = Color(hex: "#EB9486")
+    static let salmonPink = Color(hex: "#EB9486")
     static let lightBlue = Color(hex: "#7E7F9A")
 }
 
