@@ -2,7 +2,7 @@
 //  MainView.swift
 //  BetterBoxd
 //
-//  Created by stlp on 5/28/24.
+//  Created by Shiina on 5/28/24.
 //
 
 import SwiftUI
@@ -10,29 +10,43 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-            NavigationView {
-                HomePage()
+            Group {
+                NavigationView {
+                    HomePage()
+                }
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
+                
+                NavigationView {
+                    MoviesPage()
+                }
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Search")
+                }
+                
+                NavigationView {
+                    ProfilePage()
+                }
+                .tabItem {
+                    Image(systemName: "person.fill")
+                    Text("Profile")
+                }
             }
-            .tabItem {
-                Image(systemName: "house.fill")
-                Text("Home")
-            }
+        }
+        .accentColor(.foregroundWhite)
+        .onAppear {
+            let appearance = UITabBarAppearance()
+            appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+            appearance.backgroundColor = UIColor(Color.darkBlue.opacity(0.2))
             
-            NavigationView {
-                MoviesPage()
-            }
-            .tabItem {
-                Image(systemName: "magnifyingglass")
-                Text("Search")
-            }
+            appearance.shadowColor = UIColor(Color.salmonPink)
             
-            NavigationView {
-                ProfilePage()
-            }
-            .tabItem {
-                Image(systemName: "person.fill")
-                Text("Profile")
-            }
+            UITabBar.appearance().standardAppearance = appearance
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+            
         }
     }
 }
@@ -40,3 +54,4 @@ struct MainView: View {
 #Preview {
     MainView()
 }
+

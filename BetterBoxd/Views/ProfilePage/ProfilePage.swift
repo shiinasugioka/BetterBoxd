@@ -2,7 +2,7 @@
 //  ProfilePage.swift
 //  BetterBoxd
 //
-//  Created by stlp on 5/28/24.
+//  Created by Shiina on 5/28/24.
 //
 
 import SwiftUI
@@ -11,8 +11,13 @@ struct ProfilePage: View {
     var body: some View {
         ZStack {
             Color.darkBlue.edgesIgnoringSafeArea(.all)
-            Text("Profile Page Content")
-                .foregroundColor(.white)
+            
+            VStack {
+                Text("Profile Page Content")
+                    .foregroundColor(.foregroundWhite)
+                
+                
+            }
         }
     }
 }
