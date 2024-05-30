@@ -1,10 +1,3 @@
-//
-//  MainView.swift
-//  BetterBoxd
-//
-//  Created by Shiina on 5/28/24.
-//
-
 import SwiftUI
 
 struct MainView: View {
@@ -18,7 +11,7 @@ struct MainView: View {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
-                
+
                 NavigationView {
                     MoviesPage()
                 }
@@ -26,7 +19,7 @@ struct MainView: View {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
-                
+
                 NavigationView {
                     ProfilePage()
                 }
@@ -41,12 +34,12 @@ struct MainView: View {
             let appearance = UITabBarAppearance()
             appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
             appearance.backgroundColor = UIColor(Color.darkBlue.opacity(0.2))
-            
+
             appearance.shadowColor = UIColor(Color.salmonPink)
-            
+
             UITabBar.appearance().standardAppearance = appearance
             UITabBar.appearance().scrollEdgeAppearance = appearance
-            
+
         }
     }
 }
