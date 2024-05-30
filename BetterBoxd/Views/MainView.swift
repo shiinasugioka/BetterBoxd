@@ -1,10 +1,4 @@
-//
-//  MainView.swift
-//  BetterBoxd
-//
-//  Created by stlp on 5/28/24.
-//
-
+// Views/MainView.swift
 import SwiftUI
 
 struct MainView: View {
