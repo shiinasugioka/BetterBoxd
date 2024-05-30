@@ -11,7 +11,7 @@ struct ProfilePage: View {
     var body: some View {
         ZStack {
             Color.darkBlue.edgesIgnoringSafeArea(.all)
-            Text("Movies Page Content")
+            Text("Profile Page Content")
                 .foregroundColor(.white)
         }
     }
