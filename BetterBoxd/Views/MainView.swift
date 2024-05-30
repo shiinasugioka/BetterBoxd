@@ -12,13 +12,13 @@ struct MainView: View {
                 Text("Home")
             }
             
-//            NavigationView {
-//                MoviesPage()
-//            }
-//            .tabItem {
-//                Image(systemName: "magnifyingglass")
-//                Text("Search")
-//            }
+            NavigationView {
+                MoviesPage()
+            }
+            .tabItem {
+                Image(systemName: "magnifyingglass")
+                Text("Search")
+            }
             
             NavigationView {
                 ProfilePage()

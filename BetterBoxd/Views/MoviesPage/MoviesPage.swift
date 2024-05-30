@@ -2,8 +2,9 @@ import SwiftUI
 
 struct MoviesPage: View {
     @State private var searchText: String = ""
+    @State private var selectedMovie: Movie? = nil
     @ObservedObject private var viewModel: MoviesViewModel = MoviesViewModel()
-    
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -16,7 +17,7 @@ struct MoviesPage: View {
                         .padding()
                         .background(Color(.systemGray6))
                         .cornerRadius(10)
-                        
+
                         Button(action: {
                             viewModel.searchMovies(query: searchText)
                         }) {
@@ -27,7 +28,7 @@ struct MoviesPage: View {
                         }
                     }
                     .padding(.horizontal)
-                    
+
                     // Autocomplete Results
                     if !viewModel.autocompleteResults.isEmpty {
                         VStack(alignment: .leading) {
@@ -44,38 +45,44 @@ struct MoviesPage: View {
                         }
                         .padding(.horizontal)
                     }
-                    
+
                     // Recently Searched
                     Text("Recently searched ✈️")
                         .font(.headline)
                         .padding(.horizontal)
-                    
+
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
                             ForEach(viewModel.searchedMovies) { movie in
                                 MovieCard(movie: movie)
+                                    .onTapGesture {
+                                        selectedMovie = movie
+                                    }
                             }
                         }
                         .padding(.horizontal)
                     }
-                    
+
                     // Movie Highlight of the Day
                     Text("Movie highlight of the day 🕒")
                         .font(.headline)
                         .padding(.horizontal)
-                    
+
                     MovieHighlightCard(movie: viewModel.popularMovies.first ?? Movie(id: 3, title: "Shutter Island", overview: "In 1954, a U.S. Marshal investigates the disappearance of a murderer, who escaped from a hospital for the criminally insane.", posterPath: "/52d8Y2aE2xUJd7Qkq6Yv0UMu3fh.jpg"))
                         .padding(.horizontal)
-                    
+
                     // Popular Movies
                     Text("Popular Movies 🍿")
                         .font(.headline)
                         .padding(.horizontal)
-                    
+
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
                             ForEach(viewModel.popularMovies) { movie in
                                 MovieCard(movie: movie)
+                                    .onTapGesture {
+                                        selectedMovie = movie
+                                    }
                             }
                         }
                         .padding(.horizontal)
@@ -83,10 +90,12 @@ struct MoviesPage: View {
                 }
             }
             .navigationTitle("Search Movies")
+            .sheet(item: $selectedMovie) { movie in
+                MovieDetailView(movie: movie)
+            }
         }
     }
 }
-
 struct MovieCard: View {
     let movie: Movie
     

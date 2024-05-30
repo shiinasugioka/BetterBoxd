@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BB121E632C08F97C00D00A5E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB121E622C08F97C00D00A5E /* Movie.swift */; };
 		BB121E672C08FB8100D00A5E /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */; };
+		BB6067992C09174500F9195A /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6067982C09174500F9195A /* MovieDetailView.swift */; };
 		DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */; };
 		DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A982BFBC10200C676FC /* Assets.xcassets */; };
 		DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		BB121E642C08FA7000D00A5E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BB121E652C08FB4100D00A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoviesViewModel.swift; path = BetterBoxd/Utils/MoviesViewModel.swift; sourceTree = SOURCE_ROOT; };
+		BB6067982C09174500F9195A /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		DB419A912BFBC0FF00C676FC /* BetterBoxd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterBoxd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterBoxdApp.swift; sourceTree = "<group>"; };
 		DB419A982BFBC10200C676FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		DBE4C0AE2C013673001B06CA /* MoviesPage */ = {
 			isa = PBXGroup;
 			children = (
+				BB6067982C09174500F9195A /* MovieDetailView.swift */,
 				DBE4C0B62C0683CD001B06CA /* MoviesPage.swift */,
 			);
 			path = MoviesPage;
@@ -218,6 +221,7 @@
 				BB121E632C08F97C00D00A5E /* Movie.swift in Sources */,
 				DBE4C0B52C013838001B06CA /* HomePage.swift in Sources */,
 				DBE4C0BB2C068552001B06CA /* MainView.swift in Sources */,
+				BB6067992C09174500F9195A /* MovieDetailView.swift in Sources */,
 				DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */,
 				DBE4C0B92C0683DA001B06CA /* ProfilePage.swift in Sources */,
 				DBE4C0B02C01368D001B06CA /* Constants.swift in Sources */,
