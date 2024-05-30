@@ -28,6 +28,9 @@ Config.xcconfig
 ## Obj-C/Swift specific
 *.hmap
 
+*.idea/
+*.plist
+
 ## App packaging
 *.ipa
 *.dSYM.zip
