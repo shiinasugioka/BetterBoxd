@@ -1,4 +1,3 @@
-// Views/HomePage/HomePage.swift
 import SwiftUI
 
 struct HomePage: View {
@@ -6,28 +5,24 @@ struct HomePage: View {
 
     var body: some View {
         NavigationView {
-            List(viewModel.movies) { movie in
-                HStack {
-                    if let posterURL = movie.posterURL {
-                        AsyncImage(url: posterURL) { image in
-                            image.resizable()
-                                .scaledToFill()
-                                .frame(width: 50, height: 75)
-                                .clipped()
-                        } placeholder: {
-                            ProgressView()
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    // Popular Movies
+                    Text("Popular Movies 🍿")
+                        .font(.headline)
+                        .padding(.horizontal)
+
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            ForEach(viewModel.popularMovies) { movie in
+                                MovieCard(movie: movie)
+                            }
                         }
-                    }
-                    VStack(alignment: .leading) {
-                        Text(movie.title)
-                            .font(.headline)
-                        Text(movie.overview)
-                            .font(.subheadline)
-                            .lineLimit(3)
+                        .padding(.horizontal)
                     }
                 }
             }
-            .navigationTitle("Popular Movies")
+            .navigationTitle("Home")
         }
     }
 }

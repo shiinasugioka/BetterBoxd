@@ -52,7 +52,7 @@ struct MoviesPage: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
-                            ForEach(viewModel.movies) { movie in
+                            ForEach(viewModel.searchedMovies) { movie in
                                 MovieCard(movie: movie)
                             }
                         }
@@ -64,7 +64,7 @@ struct MoviesPage: View {
                         .font(.headline)
                         .padding(.horizontal)
                     
-                    MovieHighlightCard(movie: viewModel.movies.first ?? Movie(id: 3, title: "Shutter Island", overview: "In 1954, a U.S. Marshal investigates the disappearance of a murderer, who escaped from a hospital for the criminally insane.", posterPath: "/52d8Y2aE2xUJd7Qkq6Yv0UMu3fh.jpg"))
+                    MovieHighlightCard(movie: viewModel.popularMovies.first ?? Movie(id: 3, title: "Shutter Island", overview: "In 1954, a U.S. Marshal investigates the disappearance of a murderer, who escaped from a hospital for the criminally insane.", posterPath: "/52d8Y2aE2xUJd7Qkq6Yv0UMu3fh.jpg"))
                         .padding(.horizontal)
                     
                     // Popular Movies
@@ -74,7 +74,7 @@ struct MoviesPage: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 10) {
-                            ForEach(viewModel.movies) { movie in
+                            ForEach(viewModel.popularMovies) { movie in
                                 MovieCard(movie: movie)
                             }
                         }
