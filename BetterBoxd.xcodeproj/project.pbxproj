@@ -13,6 +13,7 @@
 		DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */; };
 		DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A982BFBC10200C676FC /* Assets.xcassets */; };
 		DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */; };
+		DB55D3362C0938D6003647CA /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB55D3352C0938D6003647CA /* info.plist */; };
 		DBE4C0B02C01368D001B06CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0AF2C01368D001B06CA /* Constants.swift */; };
 		DBE4C0B52C013838001B06CA /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0B42C013838001B06CA /* HomePage.swift */; };
 		DBE4C0B72C0683CD001B06CA /* MoviesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0B62C0683CD001B06CA /* MoviesPage.swift */; };
@@ -22,13 +23,13 @@
 
 /* Begin PBXFileReference section */
 		BB121E622C08F97C00D00A5E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = BetterBoxd/Views/Movie.swift; sourceTree = SOURCE_ROOT; };
-		BB121E652C08FB4100D00A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoviesViewModel.swift; path = BetterBoxd/Utils/MoviesViewModel.swift; sourceTree = SOURCE_ROOT; };
 		BB6067982C09174500F9195A /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		DB419A912BFBC0FF00C676FC /* BetterBoxd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterBoxd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterBoxdApp.swift; sourceTree = "<group>"; };
 		DB419A982BFBC10200C676FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DB55D3352C0938D6003647CA /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		DBE4C0AF2C01368D001B06CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DBE4C0B42C013838001B06CA /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		DBE4C0B62C0683CD001B06CA /* MoviesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesPage.swift; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		DB419A932BFBC0FF00C676FC /* BetterBoxd */ = {
 			isa = PBXGroup;
 			children = (
-				BB121E652C08FB4100D00A5E /* Info.plist */,
 				DBE4C0AB2C01363A001B06CA /* Models */,
 				DBE4C0AA2C013625001B06CA /* Resources */,
 				DBE4C0A92C01361E001B06CA /* Utils */,
@@ -74,6 +74,7 @@
 				DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */,
 				DB419A982BFBC10200C676FC /* Assets.xcassets */,
 				DB419A9A2BFBC10200C676FC /* Preview Content */,
+				DB55D3352C0938D6003647CA /* info.plist */,
 			);
 			path = BetterBoxd;
 			sourceTree = "<group>";
@@ -206,6 +207,7 @@
 			files = (
 				DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */,
 				DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */,
+				DB55D3362C0938D6003647CA /* info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
