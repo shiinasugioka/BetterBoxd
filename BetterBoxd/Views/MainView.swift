@@ -2,7 +2,7 @@
 //  MainView.swift
 //  BetterBoxd
 //
-//  Created by stlp on 5/28/24.
+//  Created by Shiina on 5/28/24.
 //
 
 import SwiftUI
@@ -10,33 +10,39 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-            NavigationView {
-                HomePage()
+            Group {
+                NavigationView {
+                    HomePage()
+                }
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
+                
+                NavigationView {
+                    MoviesPage()
+                }
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Search")
+                }
+                
+                NavigationView {
+                    ProfilePage()
+                }
+                .tabItem {
+                    Image(systemName: "person.fill")
+                    Text("Profile")
+                }
             }
-            .tabItem {
-                Image(systemName: "house.fill")
-                Text("Home")
-            }
-            
-            NavigationView {
-                MoviesPage()
-            }
-            .tabItem {
-                Image(systemName: "magnifyingglass")
-                Text("Search")
-            }
-            
-            NavigationView {
-                ProfilePage()
-            }
-            .tabItem {
-                Image(systemName: "person.fill")
-                Text("Profile")
-            }
+            .toolbarBackground(Material.ultraThin, for: .tabBar)
+            .toolbarBackground(.visible, for: .tabBar)
         }
+        .accentColor(.foregroundWhite)
     }
 }
 
 #Preview {
     MainView()
 }
+

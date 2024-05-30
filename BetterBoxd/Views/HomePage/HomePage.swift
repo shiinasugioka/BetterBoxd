@@ -11,11 +11,12 @@ struct HomePage: View {
     var body: some View {
         ZStack {
             Color.darkBlue.edgesIgnoringSafeArea(.all)
- 
-            Text("Home Page Content")
-                .foregroundColor(.foregroundWhite)
+            
+            VStack {
+                Text("Home Page Content")
+                    .foregroundColor(.foregroundWhite)
+            }
         }
-        
     }
 }
 
