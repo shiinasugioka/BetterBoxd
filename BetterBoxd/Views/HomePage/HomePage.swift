@@ -9,9 +9,13 @@ import SwiftUI
 
 struct HomePage: View {
     var body: some View {
-        VStack {
-            Text("this is the home page")
+        ZStack {
+            Color.darkBlue.edgesIgnoringSafeArea(.all)
+ 
+            Text("Home Page Content")
+                .foregroundColor(.foregroundWhite)
         }
+        
     }
 }
 
