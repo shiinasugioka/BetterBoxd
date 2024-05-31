@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01B9925755AAE115B96CB339 /* Pods_BetterBoxd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79356872B08791840F539299 /* Pods_BetterBoxd.framework */; };
 		BB121E632C08F97C00D00A5E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB121E622C08F97C00D00A5E /* Movie.swift */; };
 		BB121E672C08FB8100D00A5E /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */; };
 		BB6067992C09174500F9195A /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6067982C09174500F9195A /* MovieDetailView.swift */; };
+		BBBEF6692C09A52E0069AF15 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBEF6682C09A52E0069AF15 /* Profile.swift */; };
+		BBBEF66B2C09A8530069AF15 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBEF66A2C09A8530069AF15 /* AuthViewModel.swift */; };
+		BBBEF66D2C09A8680069AF15 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBEF66C2C09A8680069AF15 /* LoginView.swift */; };
+		BBBEF6702C09A8920069AF15 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBEF66F2C09A8920069AF15 /* ProfileView.swift */; };
+		BBBEF6722C09ACFC0069AF15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBEF6712C09ACFC0069AF15 /* AppDelegate.swift */; };
 		DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */; };
 		DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A982BFBC10200C676FC /* Assets.xcassets */; };
 		DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */; };
@@ -22,9 +28,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13D5D2D68DFB0118D87B0F7E /* Pods-BetterBoxd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterBoxd.release.xcconfig"; path = "Target Support Files/Pods-BetterBoxd/Pods-BetterBoxd.release.xcconfig"; sourceTree = "<group>"; };
+		79356872B08791840F539299 /* Pods_BetterBoxd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetterBoxd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		996AFCFD693627F6CD0183C5 /* Pods-BetterBoxd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterBoxd.debug.xcconfig"; path = "Target Support Files/Pods-BetterBoxd/Pods-BetterBoxd.debug.xcconfig"; sourceTree = "<group>"; };
 		BB121E622C08F97C00D00A5E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = BetterBoxd/Views/Movie.swift; sourceTree = SOURCE_ROOT; };
 		BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoviesViewModel.swift; path = BetterBoxd/Utils/MoviesViewModel.swift; sourceTree = SOURCE_ROOT; };
 		BB6067982C09174500F9195A /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
+		BBBEF6682C09A52E0069AF15 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		BBBEF66A2C09A8530069AF15 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		BBBEF66C2C09A8680069AF15 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BBBEF66F2C09A8920069AF15 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		BBBEF6712C09ACFC0069AF15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB419A912BFBC0FF00C676FC /* BetterBoxd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterBoxd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterBoxdApp.swift; sourceTree = "<group>"; };
 		DB419A982BFBC10200C676FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,17 +56,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01B9925755AAE115B96CB339 /* Pods_BetterBoxd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6999CCE36F62AD32D28B4A2B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				996AFCFD693627F6CD0183C5 /* Pods-BetterBoxd.debug.xcconfig */,
+				13D5D2D68DFB0118D87B0F7E /* Pods-BetterBoxd.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DB419A882BFBC0FF00C676FC = {
 			isa = PBXGroup;
 			children = (
 				DB419A932BFBC0FF00C676FC /* BetterBoxd */,
 				DB419A922BFBC0FF00C676FC /* Products */,
+				6999CCE36F62AD32D28B4A2B /* Pods */,
+				F0180B33D9662D161A42F787 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +93,7 @@
 		DB419A932BFBC0FF00C676FC /* BetterBoxd */ = {
 			isa = PBXGroup;
 			children = (
+				BBBEF6712C09ACFC0069AF15 /* AppDelegate.swift */,
 				DBE4C0AB2C01363A001B06CA /* Models */,
 				DBE4C0AA2C013625001B06CA /* Resources */,
 				DBE4C0A92C01361E001B06CA /* Utils */,
@@ -118,6 +145,7 @@
 			children = (
 				BB121E622C08F97C00D00A5E /* Movie.swift */,
 				BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */,
+				BBBEF66A2C09A8530069AF15 /* AuthViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				DBE4C0B82C0683DA001B06CA /* ProfilePage.swift */,
+				BBBEF6682C09A52E0069AF15 /* Profile.swift */,
+				BBBEF66C2C09A8680069AF15 /* LoginView.swift */,
+				BBBEF66F2C09A8920069AF15 /* ProfileView.swift */,
 			);
 			path = ProfilePage;
 			sourceTree = "<group>";
@@ -147,6 +178,14 @@
 			path = MoviesPage;
 			sourceTree = "<group>";
 		};
+		F0180B33D9662D161A42F787 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79356872B08791840F539299 /* Pods_BetterBoxd.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,9 +193,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB419A9F2BFBC10200C676FC /* Build configuration list for PBXNativeTarget "BetterBoxd" */;
 			buildPhases = (
+				4DA6E27C4A55307B24219DEC /* [CP] Check Pods Manifest.lock */,
 				DB419A8D2BFBC0FF00C676FC /* Sources */,
 				DB419A8E2BFBC0FF00C676FC /* Frameworks */,
 				DB419A8F2BFBC0FF00C676FC /* Resources */,
+				4161C8ADE1464C248F6192E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,17 +254,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4161C8ADE1464C248F6192E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BetterBoxd/Pods-BetterBoxd-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BetterBoxd/Pods-BetterBoxd-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BetterBoxd/Pods-BetterBoxd-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DA6E27C4A55307B24219DEC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BetterBoxd-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DB419A8D2BFBC0FF00C676FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BB121E632C08F97C00D00A5E /* Movie.swift in Sources */,
+				BBBEF6702C09A8920069AF15 /* ProfileView.swift in Sources */,
+				BBBEF6692C09A52E0069AF15 /* Profile.swift in Sources */,
 				DBE4C0B52C013838001B06CA /* HomePage.swift in Sources */,
+				BBBEF6722C09ACFC0069AF15 /* AppDelegate.swift in Sources */,
 				DBE4C0BB2C068552001B06CA /* MainView.swift in Sources */,
 				BB6067992C09174500F9195A /* MovieDetailView.swift in Sources */,
 				DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */,
+				BBBEF66D2C09A8680069AF15 /* LoginView.swift in Sources */,
 				DBE4C0B92C0683DA001B06CA /* ProfilePage.swift in Sources */,
+				BBBEF66B2C09A8530069AF15 /* AuthViewModel.swift in Sources */,
 				DBE4C0B02C01368D001B06CA /* Colors.swift in Sources */,
 				DBE4C0B72C0683CD001B06CA /* MoviesPage.swift in Sources */,
 				BB121E672C08FB8100D00A5E /* MoviesViewModel.swift in Sources */,
@@ -354,6 +442,7 @@
 		};
 		DB419AA02BFBC10200C676FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 996AFCFD693627F6CD0183C5 /* Pods-BetterBoxd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -384,6 +473,7 @@
 		};
 		DB419AA12BFBC10200C676FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13D5D2D68DFB0118D87B0F7E /* Pods-BetterBoxd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
