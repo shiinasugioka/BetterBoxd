@@ -1,23 +1,24 @@
 import SwiftUI
 
 struct MainView: View {
+    @Binding var profile: Profile
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    
+
     var body: some View {
         TabView {
             NavigationView {
                 if horizontalSizeClass == .compact {
-                    HomePage()
+                    HomePage(profile: $profile)
                 } else {
                     Sidebar()
-                    HomePage() // Default content
+                    HomePage(profile: $profile) // Default content
                 }
             }
             .tabItem {
                 Image(systemName: "house.fill")
                 Text("Home")
             }
-            
+
             NavigationView {
                 if horizontalSizeClass == .compact {
                     MoviesPage()
@@ -30,7 +31,7 @@ struct MainView: View {
                 Image(systemName: "magnifyingglass")
                 Text("Search")
             }
-            
+
             NavigationView {
                 if horizontalSizeClass == .compact {
                     ProfilePage()
@@ -50,7 +51,7 @@ struct MainView: View {
             appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
             appearance.backgroundColor = UIColor(Color.darkBlue.opacity(0.2))
             appearance.shadowColor = UIColor(Color.salmonPink)
-            
+
             UITabBar.appearance().standardAppearance = appearance
             UITabBar.appearance().scrollEdgeAppearance = appearance
         }
@@ -75,10 +76,12 @@ struct Sidebar: View {
 }
 
 struct MainView_Previews: PreviewProvider {
+ @State var profile = Profile.empty
+
     static var previews: some View {
-        MainView()
+        MainView(profile: $profile)
             .previewDevice("iPhone 12")
-        MainView()
+        MainView(profile: $profile)
             .previewDevice("iPad Pro (12.9-inch) (5th generation)")
     }
 }
