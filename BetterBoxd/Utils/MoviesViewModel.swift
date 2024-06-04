@@ -7,6 +7,9 @@ class MoviesViewModel: ObservableObject {
     @Published var autocompleteResults: [Movie] = []
     @Published var upcomingMovie: Movie?
     @Published var filteredUpcomingMovies: [Movie] = []
+    @Published var favoriteMovies: [Movie] = [] // Placeholder for favorite movies
+    @Published var watchlistMovies: [Movie] = [] // Placeholder for watchlist movies
+    
     private var cancellables = Set<AnyCancellable>()
     private let apiKey: String
     private let token: String?

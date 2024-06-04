@@ -15,6 +15,25 @@ struct HomePage: View {
                             .font(.title)
                             .padding(.horizontal)
                             .foregroundColor(.white)
+                        
+                        
+                        Text("Popular Movies 🍿")
+                            .font(.headline)
+                            .padding(.horizontal)
+                            .foregroundColor(.white)
+
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 10) {
+                                ForEach(viewModel.popularMovies) { movie in
+                                    MovieCard(movie: movie)
+                                        .onTapGesture {
+                                            selectedMovie = movie
+                                        }
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
+                        
                         // Upcoming Movies
                         Text("Upcoming Movies 🎬")
                             .font(.headline)
@@ -43,46 +62,57 @@ struct HomePage: View {
                                     }
                                 }
                         }
-                        
-//                        Text("Upcoming Movies 🍿")
-//                            .font(.headline)
-//                            .padding(.horizontal)
-//                            .foregroundColor(.white)
-//                        // Upcoming Movie
-//                        if let upcomingMovie = viewModel.upcomingMovie {
-//                            CountdownCard(movie: upcomingMovie, releaseDate: upcomingMovie.releaseDate ?? Date())
-//                                .padding(.horizontal)
-//                                .onTapGesture {
-//                                    selectedMovie = upcomingMovie
-//                                }
-//                        } else {
-//                            Text("Loading...")
-//                                .foregroundColor(.white)
-//                                .padding()
-//                                .onAppear {
-//                                    if viewModel.upcomingMovie == nil {
-//                                        viewModel.fetchUpcomingMovie()
-//                                    }
-//                                }
-//                        }
-
-                        // Popular Movies
-                        Text("Popular Movies 🍿")
+                        // Your Favorite Movies
+                        Text("Your Favorite Movies ❤️")
                             .font(.headline)
                             .padding(.horizontal)
                             .foregroundColor(.white)
 
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 10) {
-                                ForEach(viewModel.popularMovies) { movie in
-                                    MovieCard(movie: movie)
-                                        .onTapGesture {
-                                            selectedMovie = movie
-                                        }
+                        if !viewModel.favoriteMovies.isEmpty {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 10) {
+                                    ForEach(viewModel.favoriteMovies) { movie in
+                                        MovieCard(movie: movie)
+                                            .onTapGesture {
+                                                selectedMovie = movie
+                                            }
+                                    }
                                 }
+                                .padding(.horizontal)
                             }
-                            .padding(.horizontal)
+                        } else {
+                            Text("Watch some films first!")
+                                .foregroundColor(.white)
+                                .padding(.horizontal)
                         }
+
+                        // Movies on Your Watchlist
+                        Text("Movies on Your Watchlist 📝")
+                            .font(.headline)
+                            .padding(.horizontal)
+                            .foregroundColor(.white)
+
+                        if !viewModel.watchlistMovies.isEmpty {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 10) {
+                                    ForEach(viewModel.watchlistMovies) { movie in
+                                        MovieCard(movie: movie)
+                                            .onTapGesture {
+                                                selectedMovie = movie
+                                            }
+                                    }
+                                }
+                                .padding(.horizontal)
+                            }
+                        } else {
+                            Text("Watch some films first!")
+                                .foregroundColor(.white)
+                                .padding(.horizontal)
+                        }
+
+                        
+
+                        
                     }
                 }
                 .sheet(item: $selectedMovie) { movie in
