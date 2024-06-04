@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		08DE6B742C0F05E300704E2F /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08DE6B732C0F05E300704E2F /* Auth0.plist */; };
-		BB121E632C08F97C00D00A5E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB121E622C08F97C00D00A5E /* Movie.swift */; };
-		BB121E672C08FB8100D00A5E /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */; };
+		BB2A0E492C0F1E3800C2525D /* AuthStarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E3F2C0F1E3800C2525D /* AuthStarterView.swift */; };
+		BB2A0E4A2C0F1E3800C2525D /* BioInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E402C0F1E3800C2525D /* BioInputView.swift */; };
+		BB2A0E4B2C0F1E3800C2525D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E412C0F1E3800C2525D /* OnboardingView.swift */; };
+		BB2A0E4C2C0F1E3800C2525D /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E422C0F1E3800C2525D /* UserInputView.swift */; };
+		BB2A0E4D2C0F1E3800C2525D /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E442C0F1E3800C2525D /* AuthController.swift */; };
+		BB2A0E4E2C0F1E3800C2525D /* OnboardingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E452C0F1E3800C2525D /* OnboardingSteps.swift */; };
+		BB2A0E4F2C0F1E3800C2525D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E462C0F1E3800C2525D /* Profile.swift */; };
+		BB2A0E502C0F1E3800C2525D /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E472C0F1E3800C2525D /* RealmManager.swift */; };
+		BB2A0E532C0F1E6100C2525D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E512C0F1E6100C2525D /* MainView.swift */; };
+		BB2A0E542C0F1E6100C2525D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E522C0F1E6100C2525D /* ContentView.swift */; };
+		BB2A0E5C2C0F1F6000C2525D /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2A0E572C0F1F6000C2525D /* Auth0.plist */; };
+		BB2A0E5D2C0F1F6000C2525D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E582C0F1F6000C2525D /* Models.swift */; };
+		BB2A0E5E2C0F1F6000C2525D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E592C0F1F6000C2525D /* Movie.swift */; };
+		BB2A0E5F2C0F1F6000C2525D /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E5A2C0F1F6000C2525D /* MoviesViewModel.swift */; };
+		BB2A0E642C0F231400C2525D /* BetterBoxdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E632C0F231400C2525D /* BetterBoxdApp.swift */; };
 		BB6067992C09174500F9195A /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6067982C09174500F9195A /* MovieDetailView.swift */; };
 		BB9D9A462C0EA6560044634D /* CountdownCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D9A452C0EA6560044634D /* CountdownCard.swift */; };
-		CF3A140F2C0EDC5B008DE466 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = CF3A140E2C0EDC5B008DE466 /* Auth0 */; };
-		CF3A14112C0EDCEA008DE466 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A14102C0EDCEA008DE466 /* Profile.swift */; };
-		CF3A14132C0EDD27008DE466 /* OnboardingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A14122C0EDD27008DE466 /* OnboardingSteps.swift */; };
-		CF3A14152C0EDD66008DE466 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A14142C0EDD66008DE466 /* AuthController.swift */; };
-		CF3A14182C0EDDC0008DE466 /* AuthStarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A14172C0EDDC0008DE466 /* AuthStarterView.swift */; };
-		CF3A141A2C0EDE42008DE466 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A14192C0EDE42008DE466 /* OnboardingView.swift */; };
-		CF3A141C2C0EDE82008DE466 /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A141B2C0EDE82008DE466 /* UserInputView.swift */; };
-		CF3A141E2C0EE0DA008DE466 /* BioInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A141D2C0EE0DA008DE466 /* BioInputView.swift */; };
-
+		BBEC724D2C0F1D1900D228B0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BBBF56F72C0F1738006B799B /* RealmSwift */; };
+		BBEC724E2C0F1D1900D228B0 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = BBEC723D2C0F1A3600D228B0 /* JWTDecode */; };
+		BBEC724F2C0F1D1900D228B0 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = BBEC72402C0F1A9100D228B0 /* Auth0 */; };
 		DB2B302D2C0E8F6E000091D7 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B302C2C0E8F6E000091D7 /* VisualEffectBlur.swift */; };
-		DB34779F2C0E9DCD008AC00E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB34779E2C0E9DCD008AC00E /* Models.swift */; };
 		DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A982BFBC10200C676FC /* Assets.xcassets */; };
 		DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */; };
 		DBE4C0B02C01368D001B06CA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0AF2C01368D001B06CA /* Colors.swift */; };
@@ -46,22 +50,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-
-		08DE6B732C0F05E300704E2F /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Auth0.plist; path = BetterBoxd/Auth0.plist; sourceTree = SOURCE_ROOT; };
-		BB121E622C08F97C00D00A5E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = BetterBoxd/Views/Movie.swift; sourceTree = SOURCE_ROOT; };
-		BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoviesViewModel.swift; path = BetterBoxd/Utils/MoviesViewModel.swift; sourceTree = SOURCE_ROOT; };
+		BB2A0E3F2C0F1E3800C2525D /* AuthStarterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthStarterView.swift; sourceTree = "<group>"; };
+		BB2A0E402C0F1E3800C2525D /* BioInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BioInputView.swift; sourceTree = "<group>"; };
+		BB2A0E412C0F1E3800C2525D /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		BB2A0E422C0F1E3800C2525D /* UserInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
+		BB2A0E442C0F1E3800C2525D /* AuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		BB2A0E452C0F1E3800C2525D /* OnboardingSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSteps.swift; sourceTree = "<group>"; };
+		BB2A0E462C0F1E3800C2525D /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		BB2A0E472C0F1E3800C2525D /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		BB2A0E512C0F1E6100C2525D /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BB2A0E522C0F1E6100C2525D /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BB2A0E572C0F1F6000C2525D /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		BB2A0E582C0F1F6000C2525D /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		BB2A0E592C0F1F6000C2525D /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		BB2A0E5A2C0F1F6000C2525D /* MoviesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
+		BB2A0E612C0F213E00C2525D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BetterBoxd/Info.plist; sourceTree = SOURCE_ROOT; };
+		BB2A0E632C0F231400C2525D /* BetterBoxdApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterBoxdApp.swift; sourceTree = "<group>"; };
 		BB6067982C09174500F9195A /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		BB9D9A452C0EA6560044634D /* CountdownCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownCard.swift; sourceTree = "<group>"; };
-		CF3A14092C0EDB14008DE466 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
-		CF3A14102C0EDCEA008DE466 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = BetterBoxd/Profile.swift; sourceTree = SOURCE_ROOT; };
-		CF3A14122C0EDD27008DE466 /* OnboardingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingSteps.swift; path = BetterBoxd/OnboardingSteps.swift; sourceTree = SOURCE_ROOT; };
-		CF3A14142C0EDD66008DE466 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthController.swift; path = BetterBoxd/AuthController.swift; sourceTree = SOURCE_ROOT; };
-		CF3A14172C0EDDC0008DE466 /* AuthStarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStarterView.swift; sourceTree = "<group>"; };
-		CF3A14192C0EDE42008DE466 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		CF3A141B2C0EDE82008DE466 /* UserInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
-		CF3A141D2C0EE0DA008DE466 /* BioInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioInputView.swift; sourceTree = "<group>"; };
 		DB2B302C2C0E8F6E000091D7 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
-		DB34779E2C0E9DCD008AC00E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		DB419A912BFBC0FF00C676FC /* BetterBoxd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterBoxd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB419A982BFBC10200C676FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -76,42 +83,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBEC72412C0F1A9100D228B0 /* Auth0 in Frameworks */,
-				BBEC723E2C0F1A3600D228B0 /* JWTDecode in Frameworks */,
-				BBBF56F82C0F1738006B799B /* RealmSwift in Frameworks */,
+				BBEC724F2C0F1D1900D228B0 /* Auth0 in Frameworks */,
+				BBEC724E2C0F1D1900D228B0 /* JWTDecode in Frameworks */,
+				BBEC724D2C0F1D1900D228B0 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BBB08F022C0F15500018B07C /* Views2 */ = {
+		BB2A0E432C0F1E3800C2525D /* OnboardingPages */ = {
 			isa = PBXGroup;
 			children = (
-				BBBF56E62C0F15C2006B799B /* AuthController.swift */,
-				BBBF56DE2C0F15C2006B799B /* OnboardingSteps.swift */,
-				BBBF56E52C0F15C2006B799B /* Profile.swift */,
-				BBBF56E42C0F15C2006B799B /* RealmManager.swift */,
+				BB2A0E3F2C0F1E3800C2525D /* AuthStarterView.swift */,
+				BB2A0E402C0F1E3800C2525D /* BioInputView.swift */,
+				BB2A0E412C0F1E3800C2525D /* OnboardingView.swift */,
+				BB2A0E422C0F1E3800C2525D /* UserInputView.swift */,
 			);
-			path = Views2;
-			sourceTree = "<group>";
+			name = OnboardingPages;
+			path = BetterBoxd/Views/OnboardingPages;
+			sourceTree = SOURCE_ROOT;
 		};
-		BBEC72462C0F1B3600D228B0 /* OnboardingPages */ = {
+		BB2A0E482C0F1E3800C2525D /* Views2 */ = {
 			isa = PBXGroup;
 			children = (
-				BBEC72422C0F1B3600D228B0 /* AuthStarterView.swift */,
-				BBEC72432C0F1B3600D228B0 /* BioInputView.swift */,
-				BBEC72442C0F1B3600D228B0 /* OnboardingView.swift */,
-				BBEC72452C0F1B3600D228B0 /* UserInputView.swift */,
+				BB2A0E442C0F1E3800C2525D /* AuthController.swift */,
+				BB2A0E452C0F1E3800C2525D /* OnboardingSteps.swift */,
+				BB2A0E462C0F1E3800C2525D /* Profile.swift */,
+				BB2A0E472C0F1E3800C2525D /* RealmManager.swift */,
 			);
-			path = OnboardingPages;
-			sourceTree = "<group>";
+			name = Views2;
+			path = BetterBoxd/Views/Views2;
+			sourceTree = SOURCE_ROOT;
 		};
-		DB3477A82C0EF1E5008AC00E /* Frameworks */ = {
+		BB2A0E5B2C0F1F6000C2525D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BB2A0E572C0F1F6000C2525D /* Auth0.plist */,
+				BB2A0E582C0F1F6000C2525D /* Models.swift */,
+				BB2A0E592C0F1F6000C2525D /* Movie.swift */,
+				BB2A0E5A2C0F1F6000C2525D /* MoviesViewModel.swift */,
 			);
-			name = Frameworks;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		DB419A882BFBC0FF00C676FC = {
@@ -119,7 +132,6 @@
 			children = (
 				DB419A932BFBC0FF00C676FC /* BetterBoxd */,
 				DB419A922BFBC0FF00C676FC /* Products */,
-				DB3477A82C0EF1E5008AC00E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,14 +146,13 @@
 		DB419A932BFBC0FF00C676FC /* BetterBoxd */ = {
 			isa = PBXGroup;
 			children = (
-				BBEC72382C0F19C600D228B0 /* BetterBoxdApp.swift */,
-				BBBF56F32C0F16A9006B799B /* Info.plist */,
-				DBE4C0AB2C01363A001B06CA /* Models */,
+				BB2A0E632C0F231400C2525D /* BetterBoxdApp.swift */,
+				BB2A0E612C0F213E00C2525D /* Info.plist */,
+				BB2A0E5B2C0F1F6000C2525D /* Models */,
 				DBE4C0A92C01361E001B06CA /* Utils */,
 				DBE4C0A82C01360D001B06CA /* Views */,
 				DB419A982BFBC10200C676FC /* Assets.xcassets */,
 				DB419A9A2BFBC10200C676FC /* Preview Content */,
-				BBEC724B2C0F1BF300D228B0 /* Auth0.plist */,
 			);
 			path = BetterBoxd;
 			sourceTree = "<group>";
@@ -157,13 +168,13 @@
 		DBE4C0A82C01360D001B06CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BBEC72462C0F1B3600D228B0 /* OnboardingPages */,
-				BBEC72362C0F19BD00D228B0 /* ContentView.swift */,
-				BBB08F022C0F15500018B07C /* Views2 */,
+				BB2A0E522C0F1E6100C2525D /* ContentView.swift */,
+				BB2A0E432C0F1E3800C2525D /* OnboardingPages */,
+				BB2A0E482C0F1E3800C2525D /* Views2 */,
 				DBE4C0AE2C013673001B06CA /* MoviesPage */,
 				DBE4C0AD2C01366D001B06CA /* ProfilePage */,
 				DBE4C0AC2C013665001B06CA /* HomePage */,
-				BBEC723A2C0F1A0100D228B0 /* MainView.swift */,
+				BB2A0E512C0F1E6100C2525D /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,21 +186,6 @@
 				DB2B302C2C0E8F6E000091D7 /* VisualEffectBlur.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		DBE4C0AB2C01363A001B06CA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-
-				BB121E622C08F97C00D00A5E /* Movie.swift */,
-				BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */,
-				CF3A14102C0EDCEA008DE466 /* Profile.swift */,
-				CF3A14122C0EDD27008DE466 /* OnboardingSteps.swift */,
-				CF3A14142C0EDD66008DE466 /* AuthController.swift */,
-				08DE6B732C0F05E300704E2F /* Auth0.plist */,
-
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		DBE4C0AC2C013665001B06CA /* HomePage */ = {
@@ -288,10 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */,
-
-				08DE6B742C0F05E300704E2F /* Auth0.plist in Resources */,
-
 				DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */,
+				BB2A0E5C2C0F1F6000C2525D /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,27 +296,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBBF56E72C0F15C2006B799B /* OnboardingSteps.swift in Sources */,
-				BBBF56EE2C0F15C2006B799B /* Profile.swift in Sources */,
-				BBEC72372C0F19BD00D228B0 /* ContentView.swift in Sources */,
-				BBEC72312C0F190400D228B0 /* Movie.swift in Sources */,
-				DB34779F2C0E9DCD008AC00E /* Models.swift in Sources */,
+				BB2A0E4F2C0F1E3800C2525D /* Profile.swift in Sources */,
 				DBE4C0B52C013838001B06CA /* HomePage.swift in Sources */,
-				BBEC72472C0F1B3600D228B0 /* AuthStarterView.swift in Sources */,
+				BB2A0E4E2C0F1E3800C2525D /* OnboardingSteps.swift in Sources */,
+				BB2A0E502C0F1E3800C2525D /* RealmManager.swift in Sources */,
 				BB6067992C09174500F9195A /* MovieDetailView.swift in Sources */,
 				BB9D9A462C0EA6560044634D /* CountdownCard.swift in Sources */,
-				BBBF56ED2C0F15C2006B799B /* RealmManager.swift in Sources */,
-				BBEC724A2C0F1B3600D228B0 /* UserInputView.swift in Sources */,
 				DB2B302D2C0E8F6E000091D7 /* VisualEffectBlur.swift in Sources */,
+				BB2A0E4C2C0F1E3800C2525D /* UserInputView.swift in Sources */,
 				DBE4C0B92C0683DA001B06CA /* ProfilePage.swift in Sources */,
-				BBEC723B2C0F1A0100D228B0 /* MainView.swift in Sources */,
-				BBEC72492C0F1B3600D228B0 /* OnboardingView.swift in Sources */,
-				BBEC72392C0F19C600D228B0 /* BetterBoxdApp.swift in Sources */,
-				BBEC72332C0F191600D228B0 /* MoviesViewModel.swift in Sources */,
 				DBE4C0B02C01368D001B06CA /* Colors.swift in Sources */,
+				BB2A0E532C0F1E6100C2525D /* MainView.swift in Sources */,
+				BB2A0E492C0F1E3800C2525D /* AuthStarterView.swift in Sources */,
 				DBE4C0B72C0683CD001B06CA /* MoviesPage.swift in Sources */,
-				BBEC72482C0F1B3600D228B0 /* BioInputView.swift in Sources */,
-				BBBF56EF2C0F15C2006B799B /* AuthController.swift in Sources */,
+				BB2A0E5E2C0F1F6000C2525D /* Movie.swift in Sources */,
+				BB2A0E5F2C0F1F6000C2525D /* MoviesViewModel.swift in Sources */,
+				BB2A0E542C0F1E6100C2525D /* ContentView.swift in Sources */,
+				BB2A0E4D2C0F1E3800C2525D /* AuthController.swift in Sources */,
+				BB2A0E642C0F231400C2525D /* BetterBoxdApp.swift in Sources */,
+				BB2A0E4B2C0F1E3800C2525D /* OnboardingView.swift in Sources */,
+				BB2A0E4A2C0F1E3800C2525D /* BioInputView.swift in Sources */,
+				BB2A0E5D2C0F1F6000C2525D /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
