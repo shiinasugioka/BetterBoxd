@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08DE6B762C0F809000704E2F /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08DE6B752C0F809000704E2F /* Auth0.plist */; };
 		BB2A0E492C0F1E3800C2525D /* AuthStarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E3F2C0F1E3800C2525D /* AuthStarterView.swift */; };
 		BB2A0E4A2C0F1E3800C2525D /* BioInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E402C0F1E3800C2525D /* BioInputView.swift */; };
 		BB2A0E4B2C0F1E3800C2525D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E412C0F1E3800C2525D /* OnboardingView.swift */; };
@@ -17,7 +18,6 @@
 		BB2A0E502C0F1E3800C2525D /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E472C0F1E3800C2525D /* RealmManager.swift */; };
 		BB2A0E532C0F1E6100C2525D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E512C0F1E6100C2525D /* MainView.swift */; };
 		BB2A0E542C0F1E6100C2525D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E522C0F1E6100C2525D /* ContentView.swift */; };
-		BB2A0E5C2C0F1F6000C2525D /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2A0E572C0F1F6000C2525D /* Auth0.plist */; };
 		BB2A0E5D2C0F1F6000C2525D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E582C0F1F6000C2525D /* Models.swift */; };
 		BB2A0E5E2C0F1F6000C2525D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E592C0F1F6000C2525D /* Movie.swift */; };
 		BB2A0E5F2C0F1F6000C2525D /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2A0E5A2C0F1F6000C2525D /* MoviesViewModel.swift */; };
@@ -50,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		08DE6B752C0F809000704E2F /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		BB2A0E3F2C0F1E3800C2525D /* AuthStarterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthStarterView.swift; sourceTree = "<group>"; };
 		BB2A0E402C0F1E3800C2525D /* BioInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BioInputView.swift; sourceTree = "<group>"; };
 		BB2A0E412C0F1E3800C2525D /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		BB2A0E472C0F1E3800C2525D /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		BB2A0E512C0F1E6100C2525D /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BB2A0E522C0F1E6100C2525D /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		BB2A0E572C0F1F6000C2525D /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		BB2A0E582C0F1F6000C2525D /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		BB2A0E592C0F1F6000C2525D /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		BB2A0E5A2C0F1F6000C2525D /* MoviesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 		BB2A0E5B2C0F1F6000C2525D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BB2A0E572C0F1F6000C2525D /* Auth0.plist */,
+				08DE6B752C0F809000704E2F /* Auth0.plist */,
 				BB2A0E582C0F1F6000C2525D /* Models.swift */,
 				BB2A0E592C0F1F6000C2525D /* Movie.swift */,
 				BB2A0E5A2C0F1F6000C2525D /* MoviesViewModel.swift */,
@@ -284,8 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */,
+				08DE6B762C0F809000704E2F /* Auth0.plist in Resources */,
 				DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */,
-				BB2A0E5C2C0F1F6000C2525D /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +464,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.shiina12.BetterBoxd;
+				PRODUCT_BUNDLE_IDENTIFIER = BetterBoxedUIUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -494,7 +494,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.uw.ischool.shiina12.BetterBoxd;
+				PRODUCT_BUNDLE_IDENTIFIER = BetterBoxedUIUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

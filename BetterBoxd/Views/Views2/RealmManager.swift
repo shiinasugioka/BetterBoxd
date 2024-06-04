@@ -28,16 +28,22 @@ class RealmManager {
         
         Realm.Configuration.defaultConfiguration = config
         
-        let realm = try! Realm()
-        print("Realm is located at:", realm.configuration.fileURL!)
+        do {
+            let realm = try Realm()
+            print("Realm is located at:", realm.configuration.fileURL!)
+        } catch {
+            print("Failed to initialize Realm: \(error.localizedDescription)")
+        }
         
-        let appId = Bundle.main.object(forInfoDictionaryKey: "REALM_APP_ID") as! String
-        self.app = RealmSwift.App(id: appId)
+        if let appId = Bundle.main.object(forInfoDictionaryKey: "REALM_APP_ID") as? String {
+            self.app = RealmSwift.App(id: appId)
+        } else {
+            print("REALM_APP_ID is missing from Info.plist")
+            self.app = nil
+        }
     }
     
     func getConfiguration() -> Realm.Configuration {
         return Realm.Configuration()
     }
-
-  
 }
