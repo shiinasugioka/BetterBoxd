@@ -44,3 +44,9 @@ struct MainView: View {
         }
     }
 }
+
+#Preview{
+    @State var profile = Profile.empty
+    
+    MainView(profile: $profile)
+}

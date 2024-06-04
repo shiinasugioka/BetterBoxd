@@ -53,7 +53,7 @@ struct UserInputView: View {
             .padding(.bottom, 30)
             
             Button(action: {
-                //TODO: inputbio
+                currentStep = .bio
             }, label: {
                 Text("Next")
                     .fontWeight(.semibold)
