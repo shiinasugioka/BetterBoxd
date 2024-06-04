@@ -7,7 +7,7 @@ struct MovieDetailView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                if let backgroundURL = movie.backgroundURL {
+                if let backgroundURL = movie.backdropURL {
                     AsyncImage(url: backgroundURL) { image in
                         image
                             .resizable()
@@ -177,3 +177,11 @@ struct MovieDetailView: View {
     }
 }
 
+extension Movie {
+    var backdropURL: URL? {
+        if let path = backdropPath {
+            return URL(string: "https://image.tmdb.org/t/p/w500\(path)")
+        }
+        return nil
+    }
+}
