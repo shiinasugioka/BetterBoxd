@@ -1,5 +1,6 @@
 // Models/Movie.swift
 import Foundation
+import RealmSwift
 
 // Movie.swift
 struct Movie: Identifiable, Codable {

@@ -11,6 +11,9 @@
 		BB121E672C08FB8100D00A5E /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */; };
 		BB6067992C09174500F9195A /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6067982C09174500F9195A /* MovieDetailView.swift */; };
 		DB2B302D2C0E8F6E000091D7 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B302C2C0E8F6E000091D7 /* VisualEffectBlur.swift */; };
+		DB34779B2C0E96D4008AC00E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DB34779A2C0E96D4008AC00E /* Realm */; };
+		DB34779D2C0E96D4008AC00E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB34779C2C0E96D4008AC00E /* RealmSwift */; };
+		DB34779F2C0E9DCD008AC00E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB34779E2C0E9DCD008AC00E /* Models.swift */; };
 		DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */; };
 		DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A982BFBC10200C676FC /* Assets.xcassets */; };
 		DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */; };
@@ -27,6 +30,7 @@
 		BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoviesViewModel.swift; path = BetterBoxd/Utils/MoviesViewModel.swift; sourceTree = SOURCE_ROOT; };
 		BB6067982C09174500F9195A /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		DB2B302C2C0E8F6E000091D7 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
+		DB34779E2C0E9DCD008AC00E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		DB419A912BFBC0FF00C676FC /* BetterBoxd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterBoxd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterBoxdApp.swift; sourceTree = "<group>"; };
 		DB419A982BFBC10200C676FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB34779D2C0E96D4008AC00E /* RealmSwift in Frameworks */,
+				DB34779B2C0E96D4008AC00E /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +127,7 @@
 			children = (
 				BB121E622C08F97C00D00A5E /* Movie.swift */,
 				BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */,
+				DB34779E2C0E9DCD008AC00E /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,6 +173,10 @@
 			dependencies = (
 			);
 			name = BetterBoxd;
+			packageProductDependencies = (
+				DB34779A2C0E96D4008AC00E /* Realm */,
+				DB34779C2C0E96D4008AC00E /* RealmSwift */,
+			);
 			productName = BetterBoxd;
 			productReference = DB419A912BFBC0FF00C676FC /* BetterBoxd.app */;
 			productType = "com.apple.product-type.application";
@@ -194,6 +205,9 @@
 				Base,
 			);
 			mainGroup = DB419A882BFBC0FF00C676FC;
+			packageReferences = (
+				DB3477992C0E96D4008AC00E /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = DB419A922BFBC0FF00C676FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -221,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB34779F2C0E9DCD008AC00E /* Models.swift in Sources */,
 				BB121E632C08F97C00D00A5E /* Movie.swift in Sources */,
 				DBE4C0B52C013838001B06CA /* HomePage.swift in Sources */,
 				DBE4C0BB2C068552001B06CA /* MainView.swift in Sources */,
@@ -438,6 +453,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DB3477992C0E96D4008AC00E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DB34779A2C0E96D4008AC00E /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB3477992C0E96D4008AC00E /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		DB34779C2C0E96D4008AC00E /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DB3477992C0E96D4008AC00E /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DB419A892BFBC0FF00C676FC /* Project object */;
 }
