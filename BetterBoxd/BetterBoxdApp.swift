@@ -1,10 +1,3 @@
-//
-//  BetterBoxdApp.swift
-//  BetterBoxd
-//
-//  Created by Shiina on 5/20/24.
-//
-
 import SwiftUI
 import RealmSwift
 
@@ -16,8 +9,9 @@ struct BetterBoxdApp: SwiftUI.App {
     
     var body: some Scene {
         WindowGroup {
-            MainView()
-                .environment(\.realmConfiguration, RealmManager.shared.getConfiguration())
+        AuthStarterView()
+//             MainView()
+//                 .environment(\.realmConfiguration, RealmManager.shared.getConfiguration())
         }
     }
 }

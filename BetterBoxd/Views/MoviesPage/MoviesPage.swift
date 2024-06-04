@@ -18,7 +18,6 @@ struct MoviesPage: View {
     }
     
     var body: some View {
-        NavigationView {
             ZStack {
                 Color.darkBlue.edgesIgnoringSafeArea(.all)
                 
@@ -83,11 +82,13 @@ struct MoviesPage: View {
                             .font(.headline)
                             .padding(.horizontal)
                             .foregroundColor(.white)
-                        
-                        
+
                         MovieHighlightCard(movie: viewModel.popularMovies.first ?? Movie(id: 3, title: "Shutter Island", overview: "In 1954, a U.S. Marshal investigates the disappearance of a murderer, who escaped from a hospital for the criminally insane.", posterPath: "/52d8Y2aE2xUJd7Qkq6Yv0UMu3fh.jpg", releaseDate: nil))
-                        
                             .padding(.horizontal)
+                            .onTapGesture {
+                                selectedMovie = viewModel.popularMovies.first
+                             }
+
                         // Popular Movies
                         Text("Popular Movies 🍿")
                             .font(.headline)
@@ -107,7 +108,6 @@ struct MoviesPage: View {
                         }
                     }
                 }
-                .navigationTitle("Search Movies")
                 .sheet(item: $selectedMovie) { movie in
                     MovieDetailView(movie: movie)
                 }
@@ -210,5 +210,14 @@ struct MovieHighlightCard: View {
 struct SearchPageView_Previews: PreviewProvider {
     static var previews: some View {
         MoviesPage()
+    }
+}
+
+struct MoviesPage_Previews: PreviewProvider {
+    static var previews: some View {
+        MoviesPage()
+            .previewDevice("iPhone 12")
+        MoviesPage()
+            .previewDevice("iPad Pro (12.9-inch) (5th generation)")
     }
 }

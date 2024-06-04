@@ -1,17 +1,30 @@
 import SwiftUI
 
 struct HomePage: View {
+    @Binding var profile: Profile
     @ObservedObject var viewModel = MoviesViewModel()
     @State private var selectedMovie: Movie? = nil
     private var userName: String = "UserName"
-    
+
+    init() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(named: "darkBlue")
+
+        appearance.titleTextAttributes = [.foregroundColor: Color.foregroundWhite.toUIColor()]
+        appearance.largeTitleTextAttributes = [.foregroundColor: Color.foregroundWhite.toUIColor()]
+
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+    }
+
     var body: some View {
         NavigationView {
             ZStack {
                 Color.darkBlue.edgesIgnoringSafeArea(.all)
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
-                        Text("Welcome, \(userName)!")
+                        Text("Welcome, \($profile.username)!")
                             .font(.title)
                             .padding(.horizontal)
                             .foregroundColor(.white)
@@ -21,7 +34,7 @@ struct HomePage: View {
                             .font(.headline)
                             .padding(.horizontal)
                             .foregroundColor(.white)
-                        
+
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 10) {
                                 ForEach(viewModel.popularMovies) { movie in
@@ -39,7 +52,7 @@ struct HomePage: View {
                             .font(.headline)
                             .padding(.horizontal)
                             .foregroundColor(.white)
-                        
+
                         if !viewModel.filteredUpcomingMovies.isEmpty {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 10) {
@@ -67,7 +80,7 @@ struct HomePage: View {
                             .font(.headline)
                             .padding(.horizontal)
                             .foregroundColor(.white)
-                        
+
                         if !viewModel.favoriteMovies.isEmpty {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 10) {
@@ -85,13 +98,13 @@ struct HomePage: View {
                                 .foregroundColor(.white)
                                 .padding(.horizontal)
                         }
-                        
+
                         // Movies on Your Watchlist
                         Text("Movies on Your Watchlist 📝")
                             .font(.headline)
                             .padding(.horizontal)
                             .foregroundColor(.white)
-                        
+
                         if !viewModel.watchlistMovies.isEmpty {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 10) {
@@ -109,10 +122,6 @@ struct HomePage: View {
                                 .foregroundColor(.white)
                                 .padding(.horizontal)
                         }
-                        
-                        
-                        
-                        
                     }
                 }
                 .sheet(item: $selectedMovie) { movie in
@@ -126,5 +135,8 @@ struct HomePage: View {
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
         HomePage()
+            .previewDevice("iPhone 12")
+        HomePage()
+            .previewDevice("iPad Pro (12.9-inch) (5th generation)")
     }
 }
