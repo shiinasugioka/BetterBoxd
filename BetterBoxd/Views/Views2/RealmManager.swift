@@ -8,7 +8,7 @@ class RealmManager {
     private init() {
         // Configure Realm with migration
         let config = Realm.Configuration(
-            schemaVersion: 3, // Update the schema version if you make further changes
+            schemaVersion: 5, // Update the schema version if you make further changes
             migrationBlock: { migration, oldSchemaVersion in
                 if oldSchemaVersion < 2 {
                     // Existing migration logic for schema version 2
