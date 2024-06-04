@@ -3,7 +3,7 @@ import SwiftUI
 extension Color {
     static let darkBlue = Color(hex: "#272838")
     static let foregroundWhite = Color(hex: "#F9F8F8")
-    static let yellow = Color(hex: "#F3DE8A")
+    static let pastelYellow = Color(hex: "#F3DE8A")
     static let salmonPink = Color(hex: "#EB9486")
     static let lightBlue = Color(hex: "#7E7F9A")
 }
@@ -31,5 +31,15 @@ extension Color {
             blue: Double(b) / 255,
             opacity: Double(a) / 255
         )
+    }
+    
+    func toUIColor() -> UIColor {
+        let components = self.cgColor?.components
+        let red = components?[0] ?? 0.0
+        let green = components?[1] ?? 0.0
+        let blue = components?[2] ?? 0.0
+        let alpha = components?[3] ?? 1.0
+        
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
 }
