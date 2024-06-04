@@ -106,7 +106,5 @@ struct MainView_Previews: PreviewProvider {
 #Preview {
     MainView()
         .environment(\.realmConfiguration, RealmManager.shared.getConfiguration())
-        }
-    }
 }
 
