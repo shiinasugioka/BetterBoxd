@@ -1,6 +1,0 @@
-framework module Pods_BetterBoxd {
-  umbrella header "Pods-BetterBoxd-umbrella.h"
-
-  export *
-  module * { export * }
-}
