@@ -63,9 +63,9 @@ class MoviesViewModel: ObservableObject {
               }
               .handleEvents(receiveOutput: { data in
                   // Print the raw data for debugging
-                  if let jsonString = String(data: data, encoding: .utf8) {
-                      print("Raw JSON Response: \(jsonString)")
-                  }
+//                  if let jsonString = String(data: data, encoding: .utf8) {
+//                      print("Raw JSON Response: \(jsonString)")
+//                  }
               })
               .decode(type: MovieResponse.self, decoder: {
                   let decoder = JSONDecoder()
@@ -134,9 +134,9 @@ class MoviesViewModel: ObservableObject {
 
             do {
                 // Print the JSON response for debugging
-                if let jsonString = String(data: data, encoding: .utf8) {
-//                    print("JSON Response: \(jsonString)")
-                }
+//                if let jsonString = String(data: data, encoding: .utf8) {
+////                    print("JSON Response: \(jsonString)")
+//                }
                 
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .formatted(DateFormatter.yyyyMMdd)
