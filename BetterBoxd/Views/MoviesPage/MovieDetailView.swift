@@ -1,5 +1,97 @@
 import SwiftUI
 
+struct AddReviewView: View {
+    var movieTitle: String
+    var backgroundURL: URL?
+
+    var body: some View {
+        ZStack {
+            if let backgroundURL = backgroundURL {
+                AsyncImage(url: backgroundURL) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                        .blur(radius: 20)
+                        .clipped()
+                        .opacity(0.5)
+                } placeholder: {
+                    Color.gray
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                }
+            } else {
+                Color.gray
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            }
+
+            VStack(alignment: .leading) {
+                HStack {
+                    ForEach(0..<5) { _ in
+                        Image(systemName: "star")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                            .foregroundColor(.white)
+                    }
+                }
+                .padding(.horizontal, 20)
+                .padding(.top, 120)
+
+                Text("Notes")
+                    .font(.headline)
+                    .padding(.top, 20)
+                    .padding(.horizontal, 20)
+                    .foregroundColor(.white)
+
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.black.opacity(0.5))
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.white, lineWidth: 1)
+
+                    TextEditor(text: .constant(""))
+                        .padding()
+                        .background(Color.clear)
+                        .foregroundColor(.white)
+                }
+                .frame(height: 200)
+                .padding(.horizontal, 20)
+                .padding(.top, 10)
+
+                Spacer()
+
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        // Add review action
+                    }) {
+                        Image(systemName: "heart")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                            .foregroundColor(.white)
+                    }
+                    Spacer()
+                    Button(action: {
+                        // Add to watchlist action
+                    }) {
+                        Image(systemName: "plus")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                            .foregroundColor(.white)
+                    }
+                    Spacer()
+                }
+                .padding(.bottom, 40)
+            }
+            .background(Color.black.opacity(0.7).edgesIgnoringSafeArea(.all))
+            .navigationTitle(movieTitle)
+            .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+}
+
 struct MovieDetailView: View {
     let movie: Movie
     @Environment(\.presentationMode) var presentationMode
@@ -112,9 +204,7 @@ struct MovieDetailView: View {
 
                             HStack {
                                 Spacer()
-                                Button(action: {
-                                    // Add review action
-                                }) {
+                                NavigationLink(destination: AddReviewView(movieTitle: movie.title, backgroundURL: movie.backdropURL)) {
                                     Text("Add your Review")
                                         .font(.headline)
                                         .padding(.horizontal, 30)
@@ -190,9 +280,9 @@ extension Movie {
 
 struct MovieDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailView(movie: Movie(id: 0, title: "Sample Movie", overview: "This is a sample movie overview.", posterPath: "/samplePoster.jpg", backdropPath: "/sampleBackdrop.jpg"))
+        MovieDetailView(movie: Movie(id: 0, title: "Sample Movie", overview: "This is a sample movie overview.", posterPath: "/samplePoster.jpg", releaseDate: nil, adult: false, backdropPath: "/sampleBackdrop.jpg", genreIds: [], originalLanguage: "en", originalTitle: "", popularity: 0.0, video: false, voteAverage: 0.0, voteCount: 0))
             .previewDevice("iPhone 12")
-        MovieDetailView(movie: Movie(id: 0, title: "Sample Movie", overview: "This is a sample movie overview.", posterPath: "/samplePoster.jpg", backdropPath: "/sampleBackdrop.jpg"))
+        MovieDetailView(movie: Movie(id: 0, title: "Sample Movie", overview: "This is a sample movie overview.", posterPath: "/samplePoster.jpg", releaseDate: nil, adult: false, backdropPath: "/sampleBackdrop.jpg", genreIds: [], originalLanguage: "en", originalTitle: "", popularity: 0.0, video: false, voteAverage: 0.0, voteCount: 0))
             .previewDevice("iPad Pro (12.9-inch) (5th generation)")
     }
 }
