@@ -5,16 +5,15 @@ struct HomePage: View {
     @ObservedObject var viewModel = MoviesViewModel()
     @State private var selectedMovie: Movie? = nil
     private var userName: String = "UserName"
-    
-    init(profile: Binding<Profile>) {
-        self._profile = profile
+
+    init() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(named: "darkBlue")
-        
+
         appearance.titleTextAttributes = [.foregroundColor: Color.foregroundWhite.toUIColor()]
         appearance.largeTitleTextAttributes = [.foregroundColor: Color.foregroundWhite.toUIColor()]
-        
+
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
@@ -133,14 +132,11 @@ struct HomePage: View {
     }
 }
 
-//struct HomePage_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let preview = HomePage_Previews()
-//        return Group {
-//            HomePage(profile: preview.$profile)
-//                .previewDevice("iPhone 12")
-//            HomePage()
-//                .previewDevice("iPad Pro (12.9-inch) (5th generation)")
-//        }
-//    }
-//}
+struct HomePage_Previews: PreviewProvider {
+    static var previews: some View {
+        HomePage()
+            .previewDevice("iPhone 12")
+        HomePage()
+            .previewDevice("iPad Pro (12.9-inch) (5th generation)")
+    }
+}
