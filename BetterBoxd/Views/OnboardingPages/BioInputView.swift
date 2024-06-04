@@ -67,9 +67,9 @@ struct BioInputView: View {
             .padding(.bottom, 30)
             
             Button(action: {
-                // Action for the next step
+                // Navigate to the next step
                 withAnimation {
-                    currentStep = .complete
+                    currentStep = .complete // Update to the next step
                 }
             }, label: {
                 Text("Start Now")

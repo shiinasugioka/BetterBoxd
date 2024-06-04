@@ -24,14 +24,14 @@ struct OnboardingScreen: View {
         VStack {
             switch currentStep {
             case .welcome:
-                IntroScreenView(currentStep: $currentStep)
-            case .username:
-                UserInputView(profile: $profile, currentStep: $currentStep)
-            case .bio:
-                BioInputView(profile:$profile, currentStep: $currentStep)
-            case .complete:
-                HomePage(profile:$profile)
-            }
+                           IntroScreenView(currentStep: $currentStep)
+                       case .username:
+                           UserInputView(profile: $profile, currentStep: $currentStep)
+                       case .bio:
+                           BioInputView(profile:$profile, currentStep: $currentStep)
+                       case .complete:
+                           HomePage(profile:$profile)
+                       }
         }
     }
 }

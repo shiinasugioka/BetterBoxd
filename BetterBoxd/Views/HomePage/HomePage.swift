@@ -8,6 +8,7 @@ struct HomePage: View {
     
     init(profile: Binding<Profile>) {
         self._profile = profile
+
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(named: "darkBlue")
