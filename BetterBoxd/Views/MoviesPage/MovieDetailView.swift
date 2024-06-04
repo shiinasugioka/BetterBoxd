@@ -2,76 +2,93 @@ import SwiftUI
 
 struct AddReviewView: View {
     var movieTitle: String
+    var backgroundURL: URL?
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Add your Review")
-                .font(.largeTitle)
-                .bold()
-                .padding(.top, 20)
+        ZStack {
+            if let backgroundURL = backgroundURL {
+                AsyncImage(url: backgroundURL) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                        .blur(radius: 20)
+                        .clipped()
+                        .opacity(0.5)
+                } placeholder: {
+                    Color.gray
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                }
+            } else {
+                Color.gray
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            }
+
+            VStack(alignment: .leading) {
+                HStack {
+                    ForEach(0..<5) { _ in
+                        Image(systemName: "star")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                            .foregroundColor(.white)
+                    }
+                }
                 .padding(.horizontal, 20)
+                .padding(.top, 120)
 
-            HStack {
-                ForEach(0..<5) { _ in
-                    Image(systemName: "star")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40)
+                Text("Notes")
+                    .font(.headline)
+                    .padding(.top, 20)
+                    .padding(.horizontal, 20)
+                    .foregroundColor(.white)
+
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.black.opacity(0.5))
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.white, lineWidth: 1)
+
+                    TextEditor(text: .constant(""))
+                        .padding()
+                        .background(Color.clear)
                         .foregroundColor(.white)
                 }
-            }
-            .padding(.horizontal, 20)
-            .padding(.top, 20)
-
-            Text("Notes")
-                .font(.headline)
-                .padding(.top, 20)
+                .frame(height: 200)
                 .padding(.horizontal, 20)
+                .padding(.top, 10)
 
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.gray.opacity(0.2))
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.white, lineWidth: 1)
-
-                TextEditor(text: .constant(""))
-                    .padding()
-                    .background(Color.clear)
-            }
-            .frame(height: 200)
-            .padding(.horizontal, 20)
-            .padding(.top, 10)
-
-            Spacer()
-
-            HStack {
                 Spacer()
-                Button(action: {
-                    // Add review action
-                }) {
-                    Image(systemName: "heart")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40)
-                        .foregroundColor(.white)
+
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        // Add review action
+                    }) {
+                        Image(systemName: "heart")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                            .foregroundColor(.white)
+                    }
+                    Spacer()
+                    Button(action: {
+                        // Add to watchlist action
+                    }) {
+                        Image(systemName: "plus")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                            .foregroundColor(.white)
+                    }
+                    Spacer()
                 }
-                Spacer()
-                Button(action: {
-                    // Add to watchlist action
-                }) {
-                    Image(systemName: "plus")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40)
-                        .foregroundColor(.white)
-                }
-                Spacer()
+                .padding(.bottom, 40)
             }
-            .padding(.bottom, 40)
+            .background(Color.black.opacity(0.7).edgesIgnoringSafeArea(.all))
+            .navigationTitle(movieTitle)
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .background(Color.black.edgesIgnoringSafeArea(.all))
-        .navigationTitle(movieTitle)
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -186,7 +203,7 @@ struct MovieDetailView: View {
 
                         HStack {
                             Spacer()
-                            NavigationLink(destination: AddReviewView(movieTitle: movie.title)) {
+                            NavigationLink(destination: AddReviewView(movieTitle: movie.title, backgroundURL: movie.backgroundURL)) {
                                 Text("Add your Review")
                                     .font(.headline)
                                     .padding(.horizontal, 30)
