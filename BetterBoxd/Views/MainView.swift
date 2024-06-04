@@ -23,10 +23,10 @@ struct MainView: View {
 
             NavigationView {
                 if horizontalSizeClass == .compact {
-                    MoviesPage()
+                    MoviesPage(profile: $profile)
                 } else {
                     Sidebar(profile: $profile)
-                    MoviesPage()
+                    MoviesPage(profile: $profile)
                 }
             }
             .tabItem {
@@ -36,10 +36,10 @@ struct MainView: View {
 
             NavigationView {
                 if horizontalSizeClass == .compact {
-                    ProfilePage()
+                    ProfilePage(profile: $profile)
                 } else {
                     Sidebar(profile: $profile)
-                    ProfilePage()
+                    ProfilePage(profile: $profile)
                 }
             }
             .tabItem {
@@ -59,6 +59,7 @@ struct MainView: View {
             UITabBar.appearance().scrollEdgeAppearance = appearance
 
             addUser()
+            profile.updateUserProfileInRealm(userProfile: profile)
         }
     }
 
@@ -83,10 +84,10 @@ struct Sidebar: View {
             NavigationLink(destination: HomePage(profile: $profile)) {
                 Label("Home", systemImage: "house.fill")
             }
-            NavigationLink(destination: MoviesPage()) {
+            NavigationLink(destination: MoviesPage(profile: $profile)) {
                 Label("Search", systemImage: "magnifyingglass")
             }
-            NavigationLink(destination: ProfilePage()) {
+            NavigationLink(destination: ProfilePage(profile: $profile)) {
                 Label("Profile", systemImage: "person.fill")
             }
         }

@@ -1,8 +1,14 @@
 import SwiftUI
+import RealmSwift
 
 struct AddReviewView: View {
     var movieTitle: String
     var backgroundURL: URL?
+    var movieID: Int // Add this to get the movie ID
+    @State private var rating: Int = 0
+    @State private var reviewText: String = ""
+    var userId: String // Add this to get the user ID
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         ZStack {
@@ -26,12 +32,15 @@ struct AddReviewView: View {
 
             VStack(alignment: .leading) {
                 HStack {
-                    ForEach(0..<5) { _ in
-                        Image(systemName: "star")
+                    ForEach(1..<6) { star in
+                        Image(systemName: self.rating >= star ? "star.fill" : "star")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 40, height: 40)
-                            .foregroundColor(.white)
+                            .foregroundColor(.yellow)
+                            .onTapGesture {
+                                self.rating = star
+                            }
                     }
                 }
                 .padding(.horizontal, 20)
@@ -41,7 +50,7 @@ struct AddReviewView: View {
                     .font(.headline)
                     .padding(.top, 20)
                     .padding(.horizontal, 20)
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
 
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
@@ -49,37 +58,31 @@ struct AddReviewView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.white, lineWidth: 1)
 
-                    TextEditor(text: .constant(""))
+                    TextEditor(text: $reviewText)
                         .padding()
                         .background(Color.clear)
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                 }
                 .frame(height: 200)
                 .padding(.horizontal, 20)
                 .padding(.top, 10)
 
-                Spacer()
+    
 
                 HStack {
-                    Spacer()
+
                     Button(action: {
-                        // Add review action
+                        print("Submit Review button clicked")
+                        addReview()
                     }) {
-                        Image(systemName: "heart")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
+                        Text("Submit Review")
+                            .fontWeight(.semibold)
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .padding()
                             .foregroundColor(.white)
-                    }
-                    Spacer()
-                    Button(action: {
-                        // Add to watchlist action
-                    }) {
-                        Image(systemName: "plus")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
-                            .foregroundColor(.white)
+                            .background(Color.green)
+                            .cornerRadius(20)
+                            .padding(.horizontal, 50)
                     }
                     Spacer()
                 }
@@ -90,10 +93,43 @@ struct AddReviewView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
     }
+    
+    private func addReview() {
+        print("Adding review to Realm")
+        let review = Review()
+        
+        do {
+            let realm = try Realm()
+            
+            // Fetch the existing user object
+            guard let user = realm.object(ofType: Profile.self, forPrimaryKey: userId) else {
+                print("User not found")
+                print(userId)
+                return
+            }
+            
+            review.profile = profile
+            review.movieID = movieID // Replace with actual movie ID
+            review.rating = rating
+            review.reviewText = reviewText
+            
+            try realm.write {
+                realm.add(review)
+                print("Review added to Realm")
+            }
+        } catch let error {
+            print("Failed to add review to Realm: \(error.localizedDescription)")
+        }
+        
+        // Close all modals and go to profile page
+        presentationMode.wrappedValue.dismiss()
+    }
 }
+
 
 struct MovieDetailView: View {
     let movie: Movie
+    let userId: String // Add this to pass the user ID
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
@@ -204,7 +240,7 @@ struct MovieDetailView: View {
 
                             HStack {
                                 Spacer()
-                                NavigationLink(destination: AddReviewView(movieTitle: movie.title, backgroundURL: movie.backdropURL)) {
+                                NavigationLink(destination: AddReviewView(movieTitle: movie.title, backgroundURL: movie.backdropURL, movieID: movie.id, userId: self.userId)) {
                                     Text("Add your Review")
                                         .font(.headline)
                                         .padding(.horizontal, 30)
@@ -253,7 +289,6 @@ struct MovieDetailView: View {
                     }
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button(action: {
-                            // Dismiss the modal
                             presentationMode.wrappedValue.dismiss()
                         }) {
                             Image(systemName: "xmark")
@@ -278,11 +313,11 @@ extension Movie {
     }
 }
 
-struct MovieDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        MovieDetailView(movie: Movie(id: 0, title: "Sample Movie", overview: "This is a sample movie overview.", posterPath: "/samplePoster.jpg", releaseDate: nil, adult: false, backdropPath: "/sampleBackdrop.jpg", genreIds: [], originalLanguage: "en", originalTitle: "", popularity: 0.0, video: false, voteAverage: 0.0, voteCount: 0))
-            .previewDevice("iPhone 12")
-        MovieDetailView(movie: Movie(id: 0, title: "Sample Movie", overview: "This is a sample movie overview.", posterPath: "/samplePoster.jpg", releaseDate: nil, adult: false, backdropPath: "/sampleBackdrop.jpg", genreIds: [], originalLanguage: "en", originalTitle: "", popularity: 0.0, video: false, voteAverage: 0.0, voteCount: 0))
-            .previewDevice("iPad Pro (12.9-inch) (5th generation)")
-    }
-}
+//struct MovieDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MovieDetailView(movie: Movie(id: 0, title: "Sample Movie", overview: "This is a sample movie overview.", posterPath: "/samplePoster.jpg", releaseDate: nil, adult: false, backdropPath: "/sampleBackdrop.jpg", genreIds: [], originalLanguage: "en", originalTitle: "", popularity: 0.0, video: false, voteAverage: 0.0, voteCount: 0), userId: self.userId)
+//            .previewDevice("iPhone 12")
+//        MovieDetailView(movie: Movie(id: 0, title: "Sample Movie", overview: "This is a sample movie overview.", posterPath: "/samplePoster.jpg", releaseDate: nil, adult: false, backdropPath: "/sampleBackdrop.jpg", genreIds: [], originalLanguage: "en", originalTitle: "", popularity: 0.0, video: false, voteAverage: 0.0, voteCount: 0), userId: self.userId)
+//            .previewDevice("iPad Pro (12.9-inch) (5th generation)")
+//    }
+//}

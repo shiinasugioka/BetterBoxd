@@ -30,7 +30,7 @@ struct OnboardingScreen: View {
             case .bio:
                 BioInputView(profile:$profile, currentStep: $currentStep)
             case .complete:
-                HomePage(profile:$profile)
+                MainView(profile:$profile)
             }
         }
     }
@@ -71,7 +71,7 @@ struct IntroScreenView: View {
             HStack {
                 Color.green.frame(height: 8 / UIScreen.main.scale)
                 Color.gray.frame(height: 8 / UIScreen.main.scale)
-                Color.gray.frame(height: 8 / UIScreen.main.scale)
+                
             }
             .padding(.horizontal, 30)
             .padding(.bottom, 30)

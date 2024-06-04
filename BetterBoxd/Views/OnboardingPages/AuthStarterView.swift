@@ -5,15 +5,9 @@
 //  Created by Ahmed Ghaddah on 6/3/24.
 //
 
-//
-//  AuthStarterView.swift
-//  BetterBoxdAuth
-//
-//  Created by Ahmed Ghaddah on 5/31/24.
-//
-
 import SwiftUI
 import Auth0
+import RealmSwift
 
 struct AuthStarterView: View {
     @StateObject private var authViewModel = AuthController()
@@ -21,13 +15,13 @@ struct AuthStarterView: View {
     var body: some View {
         NavigationView {
             if authViewModel.isAuthenticated {
-                  if authViewModel.userProfile.username.isEmpty {
+                if isUsernameEmpty() {
                     // Navigate to OnboardingView if username is empty
                     OnboardingView(profile: $authViewModel.userProfile)
-                   } else {
-                      // Navigate to MainView if username is not empty
-                        MainView(profile: $authViewModel.userProfile)
-               }
+                } else {
+                    // Navigate to MainView if username is not empty
+                    MainView(profile: $authViewModel.userProfile)
+                }
             } else {
                 VStack {
                     Image("glasses")
@@ -42,6 +36,14 @@ struct AuthStarterView: View {
                 .background(Color.darkBlue.edgesIgnoringSafeArea(.all))
             }
         }
+    }
+    
+    private func isUsernameEmpty() -> Bool {
+        let realm = try! Realm()
+        if let existingProfile = realm.object(ofType: Profile.self, forPrimaryKey: authViewModel.userProfile.id) {
+            return existingProfile.username.isEmpty
+        }
+        return true
     }
 }
 
@@ -89,10 +91,8 @@ struct BottomPartView: View {
     }
 }
 
-    
-    struct AuthStarterView_Previews: PreviewProvider {
-        static var previews: some View {
-            AuthStarterView()
-        }
+struct AuthStarterView_Previews: PreviewProvider {
+    static var previews: some View {
+        AuthStarterView()
     }
-
+}

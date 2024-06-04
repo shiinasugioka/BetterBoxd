@@ -1,10 +1,3 @@
-//
-//  RealmManager.swift
-//  BetterBoxd
-//
-//  Created by Shiina on 6/3/24.
-//
-
 import RealmSwift
 import Foundation
 
@@ -13,7 +6,22 @@ class RealmManager {
     let app: RealmSwift.App?
     
     private init() {
-        // use this to connect to realm studio
+        // Configure Realm with migration
+        let config = Realm.Configuration(
+            schemaVersion: 2, // Update the schema version if you make further changes
+            migrationBlock: { migration, oldSchemaVersion in
+                if oldSchemaVersion < 2 {
+                    // Migrate from MovieId to Int for movieID in Review
+                    migration.enumerateObjects(ofType: Review.className()) { oldObject, newObject in
+                        // Provide a default value for the new movieID field
+                        newObject?["movieID"] = 0
+                    }
+                }
+            }
+        )
+        
+        Realm.Configuration.defaultConfiguration = config
+        
         let realm = try! Realm()
         print("Realm is located at:", realm.configuration.fileURL!)
         
@@ -25,11 +33,15 @@ class RealmManager {
         return Realm.Configuration()
     }
 
-    
     func addUser(name: String, email: String) {
         let user = User()
         user.name = name
         user.email = email
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(user)
+        }
         
         print("User added successfully")
     }

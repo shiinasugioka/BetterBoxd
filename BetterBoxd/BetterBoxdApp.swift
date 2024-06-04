@@ -1,6 +1,4 @@
-
 import SwiftUI
-import RealmSwift
 
 @main
 struct BetterBoxdApp: SwiftUI.App {
@@ -10,9 +8,8 @@ struct BetterBoxdApp: SwiftUI.App {
     
     var body: some Scene {
         WindowGroup {
-        AuthStarterView()
-//             MainView()
-//                 .environment(\.realmConfiguration, RealmManager.shared.getConfiguration())
+            AuthStarterView()
+                .environmentObject(AuthController()) // Pass the AuthController environment object
         }
     }
 }

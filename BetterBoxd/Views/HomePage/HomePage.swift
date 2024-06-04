@@ -2,12 +2,14 @@ import SwiftUI
 
 struct HomePage: View {
     @Binding var profile: Profile
-    @ObservedObject var viewModel = MoviesViewModel()
+    
+    @ObservedObject var viewModel: MoviesViewModel
     @State private var selectedMovie: Movie? = nil
     private var userName: String = "UserName"
     
     init(profile: Binding<Profile>) {
         self._profile = profile
+        self.viewModel = MoviesViewModel(userId: profile.wrappedValue.id)
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(named: "darkBlue")
@@ -126,7 +128,7 @@ struct HomePage: View {
                     }
                 }
                 .sheet(item: $selectedMovie) { movie in
-                    MovieDetailView(movie: movie)
+                    MovieDetailView(movie: movie, userId: $profile.wrappedValue.id)
                 }
             }
         }

@@ -3,9 +3,12 @@ import SwiftUI
 struct MoviesPage: View {
     @State private var searchText: String = ""
     @State private var selectedMovie: Movie? = nil
-    @ObservedObject private var viewModel: MoviesViewModel = MoviesViewModel()
+    @Binding var profile: Profile
+    @ObservedObject private var viewModel: MoviesViewModel
     
-    init() {
+    init(profile: Binding<Profile>) {
+        self._profile = profile
+        self.viewModel = MoviesViewModel(userId: profile.wrappedValue.id)
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(named: "darkBlue")
@@ -109,7 +112,7 @@ struct MoviesPage: View {
                     }
                 }
                 .sheet(item: $selectedMovie) { movie in
-                    MovieDetailView(movie: movie)
+                    MovieDetailView(movie: movie, userId: $profile.wrappedValue.id)
                 }
             }
         }
@@ -207,17 +210,17 @@ struct MovieHighlightCard: View {
     }
 }
 
-struct SearchPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        MoviesPage()
-    }
-}
-
-struct MoviesPage_Previews: PreviewProvider {
-    static var previews: some View {
-        MoviesPage()
-            .previewDevice("iPhone 12")
-        MoviesPage()
-            .previewDevice("iPad Pro (12.9-inch) (5th generation)")
-    }
-}
+//struct SearchPageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MoviesPage()
+//    }
+//}
+//
+//struct MoviesPage_Previews: PreviewProvider {
+//    static var previews: some View {
+//        MoviesPage()
+//            .previewDevice("iPhone 12")
+//        MoviesPage()
+//            .previewDevice("iPad Pro (12.9-inch) (5th generation)")
+//    }
+//}
