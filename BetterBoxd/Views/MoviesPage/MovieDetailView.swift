@@ -1,5 +1,80 @@
 import SwiftUI
 
+struct AddReviewView: View {
+    var movieTitle: String
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Add your Review")
+                .font(.largeTitle)
+                .bold()
+                .padding(.top, 20)
+                .padding(.horizontal, 20)
+
+            HStack {
+                ForEach(0..<5) { _ in
+                    Image(systemName: "star")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(.white)
+                }
+            }
+            .padding(.horizontal, 20)
+            .padding(.top, 20)
+
+            Text("Notes")
+                .font(.headline)
+                .padding(.top, 20)
+                .padding(.horizontal, 20)
+
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.gray.opacity(0.2))
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.white, lineWidth: 1)
+
+                TextEditor(text: .constant(""))
+                    .padding()
+                    .background(Color.clear)
+            }
+            .frame(height: 200)
+            .padding(.horizontal, 20)
+            .padding(.top, 10)
+
+            Spacer()
+
+            HStack {
+                Spacer()
+                Button(action: {
+                    // Add review action
+                }) {
+                    Image(systemName: "heart")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(.white)
+                }
+                Spacer()
+                Button(action: {
+                    // Add to watchlist action
+                }) {
+                    Image(systemName: "plus")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(.white)
+                }
+                Spacer()
+            }
+            .padding(.bottom, 40)
+        }
+        .background(Color.black.edgesIgnoringSafeArea(.all))
+        .navigationTitle(movieTitle)
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
 struct MovieDetailView: View {
     let movie: Movie
     @Environment(\.presentationMode) var presentationMode
@@ -111,9 +186,7 @@ struct MovieDetailView: View {
 
                         HStack {
                             Spacer()
-                            Button(action: {
-                                // Add review action
-                            }) {
+                            NavigationLink(destination: AddReviewView(movieTitle: movie.title)) {
                                 Text("Add your Review")
                                     .font(.headline)
                                     .padding(.horizontal, 30)
