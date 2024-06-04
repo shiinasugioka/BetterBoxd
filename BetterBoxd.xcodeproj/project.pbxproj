@@ -10,6 +10,7 @@
 		BB121E632C08F97C00D00A5E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB121E622C08F97C00D00A5E /* Movie.swift */; };
 		BB121E672C08FB8100D00A5E /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */; };
 		BB6067992C09174500F9195A /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6067982C09174500F9195A /* MovieDetailView.swift */; };
+		BB9D9A462C0EA6560044634D /* CountdownCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D9A452C0EA6560044634D /* CountdownCard.swift */; };
 		DB2B302D2C0E8F6E000091D7 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B302C2C0E8F6E000091D7 /* VisualEffectBlur.swift */; };
 		DB34779B2C0E96D4008AC00E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DB34779A2C0E96D4008AC00E /* Realm */; };
 		DB34779D2C0E96D4008AC00E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB34779C2C0E96D4008AC00E /* RealmSwift */; };
@@ -29,6 +30,7 @@
 		BB121E622C08F97C00D00A5E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = BetterBoxd/Views/Movie.swift; sourceTree = SOURCE_ROOT; };
 		BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoviesViewModel.swift; path = BetterBoxd/Utils/MoviesViewModel.swift; sourceTree = SOURCE_ROOT; };
 		BB6067982C09174500F9195A /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
+		BB9D9A452C0EA6560044634D /* CountdownCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownCard.swift; sourceTree = "<group>"; };
 		DB2B302C2C0E8F6E000091D7 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		DB34779E2C0E9DCD008AC00E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		DB419A912BFBC0FF00C676FC /* BetterBoxd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterBoxd.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				DBE4C0B42C013838001B06CA /* HomePage.swift */,
+				BB9D9A452C0EA6560044634D /* CountdownCard.swift */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				DBE4C0BB2C068552001B06CA /* MainView.swift in Sources */,
 				BB6067992C09174500F9195A /* MovieDetailView.swift in Sources */,
 				DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */,
+				BB9D9A462C0EA6560044634D /* CountdownCard.swift in Sources */,
 				DB2B302D2C0E8F6E000091D7 /* VisualEffectBlur.swift in Sources */,
 				DBE4C0B92C0683DA001B06CA /* ProfilePage.swift in Sources */,
 				DBE4C0B02C01368D001B06CA /* Colors.swift in Sources */,
