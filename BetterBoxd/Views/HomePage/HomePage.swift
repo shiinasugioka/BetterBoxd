@@ -3,6 +3,7 @@ import SwiftUI
 struct HomePage: View {
     @ObservedObject var viewModel = MoviesViewModel()
     @State private var selectedMovie: Movie? = nil
+    private var userName: String = "UserName"
 
     var body: some View {
         NavigationView {
@@ -10,29 +11,60 @@ struct HomePage: View {
                 Color.darkBlue.edgesIgnoringSafeArea(.all)
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
-
-                        
-                        Text("Upcoming Movies 🍿")
+                        Text("Welcome, \(userName)!")
+                            .font(.title)
+                            .padding(.horizontal)
+                            .foregroundColor(.white)
+                        // Upcoming Movies
+                        Text("Upcoming Movies 🎬")
                             .font(.headline)
                             .padding(.horizontal)
                             .foregroundColor(.white)
-                        // Upcoming Movie
-                        if let upcomingMovie = viewModel.upcomingMovie {
-                            CountdownCard(movie: upcomingMovie, releaseDate: upcomingMovie.releaseDate ?? Date())
-                                .padding(.horizontal)
-                                .onTapGesture {
-                                    selectedMovie = upcomingMovie
+
+                        if !viewModel.filteredUpcomingMovies.isEmpty {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 10) {
+                                    ForEach(viewModel.filteredUpcomingMovies) { movie in
+                                        CountdownCard(movie: movie, releaseDate: movie.releaseDate ?? Date())
+                                            .onTapGesture {
+                                                selectedMovie = movie
+                                            }
+                                    }
                                 }
+                                .padding(.horizontal)
+                            }
                         } else {
                             Text("Loading...")
                                 .foregroundColor(.white)
                                 .padding()
                                 .onAppear {
-                                    if viewModel.upcomingMovie == nil {
+                                    if viewModel.filteredUpcomingMovies.isEmpty {
                                         viewModel.fetchUpcomingMovie()
                                     }
                                 }
                         }
+                        
+//                        Text("Upcoming Movies 🍿")
+//                            .font(.headline)
+//                            .padding(.horizontal)
+//                            .foregroundColor(.white)
+//                        // Upcoming Movie
+//                        if let upcomingMovie = viewModel.upcomingMovie {
+//                            CountdownCard(movie: upcomingMovie, releaseDate: upcomingMovie.releaseDate ?? Date())
+//                                .padding(.horizontal)
+//                                .onTapGesture {
+//                                    selectedMovie = upcomingMovie
+//                                }
+//                        } else {
+//                            Text("Loading...")
+//                                .foregroundColor(.white)
+//                                .padding()
+//                                .onAppear {
+//                                    if viewModel.upcomingMovie == nil {
+//                                        viewModel.fetchUpcomingMovie()
+//                                    }
+//                                }
+//                        }
 
                         // Popular Movies
                         Text("Popular Movies 🍿")

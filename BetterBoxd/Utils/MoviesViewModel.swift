@@ -6,7 +6,7 @@ class MoviesViewModel: ObservableObject {
     @Published var searchedMovies: [Movie] = []
     @Published var autocompleteResults: [Movie] = []
     @Published var upcomingMovie: Movie?
-    
+    @Published var filteredUpcomingMovies: [Movie] = []
     private var cancellables = Set<AnyCancellable>()
     private let apiKey: String
     private let token: String?
@@ -31,69 +31,62 @@ class MoviesViewModel: ObservableObject {
         fetchPopularMovies()
         fetchUpcomingMovie()  // Fetch upcoming movies
     }
-    
     func fetchUpcomingMovie() {
-        guard let url = URL(string: "https://api.themoviedb.org/3/movie/upcoming") else {
-            print("Invalid URL")
-            return
-        }
-        
-        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
-        let queryItems: [URLQueryItem] = [
-            URLQueryItem(name: "language", value: "en-US"),
-            URLQueryItem(name: "page", value: "1"),
-            URLQueryItem(name: "api_key", value: apiKey) // Use the instance variable apiKey
-        ]
-        components.queryItems = queryItems
-        
-        var request = URLRequest(url: components.url!)
-        request.httpMethod = "GET"
-        request.timeoutInterval = 10
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization") // Use the instance variable token
-        
-        URLSession.shared.dataTaskPublisher(for: request)
-            .tryMap { (data, response) -> Data in
-                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                    throw URLError(.badServerResponse)
-                }
-                return data
-            }
-            .handleEvents(receiveOutput: { data in
-                // Print the raw data for debugging
-                if let jsonString = String(data: data, encoding: .utf8) {
-//                    print("Raw JSON Response: \(jsonString)")
-                }
-            })
-            .decode(type: MovieResponse.self, decoder: {
-                let decoder = JSONDecoder()
-                decoder.dateDecodingStrategy = .formatted(DateFormatter.yyyyMMdd)
-                return decoder
-            }())
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
-                if case .failure(let error) = completion {
-                    print("Error fetching upcoming movie: \(error.localizedDescription)")
-                }
-            }, receiveValue: { response in
-                let now = Date()
-                let calendar = Calendar.current
-                let sevenDaysFromNow = calendar.date(byAdding: .day, value: 7, to: now)!
-                let threeWeeksFromNow = calendar.date(byAdding: .weekOfYear, value: 3, to: now)!
-                
-                let filteredMovies = response.results.filter { movie in
-                    guard let releaseDate = movie.releaseDate else { return false }
-                    return releaseDate > sevenDaysFromNow && releaseDate <= threeWeeksFromNow
-                }
-                
-                if let randomMovie = filteredMovies.randomElement() {
-                    self.upcomingMovie = randomMovie
-                } else {
-                    print("No upcoming movies found in the specified date range.")
-                }
-            })
-            .store(in: &self.cancellables)
-    }
+          guard let url = URL(string: "https://api.themoviedb.org/3/movie/upcoming") else {
+              print("Invalid URL")
+              return
+          }
+          
+          var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
+          let queryItems: [URLQueryItem] = [
+              URLQueryItem(name: "language", value: "en-US"),
+              URLQueryItem(name: "page", value: "1"),
+              URLQueryItem(name: "api_key", value: apiKey) // Use the instance variable apiKey
+          ]
+          components.queryItems = queryItems
+          
+          var request = URLRequest(url: components.url!)
+          request.httpMethod = "GET"
+          request.timeoutInterval = 10
+          request.setValue("application/json", forHTTPHeaderField: "Accept")
+          request.setValue("Bearer \(token ?? "")", forHTTPHeaderField: "Authorization") // Use the instance variable token
+          
+          URLSession.shared.dataTaskPublisher(for: request)
+              .tryMap { (data, response) -> Data in
+                  guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                      throw URLError(.badServerResponse)
+                  }
+                  return data
+              }
+              .handleEvents(receiveOutput: { data in
+                  // Print the raw data for debugging
+                  if let jsonString = String(data: data, encoding: .utf8) {
+                      print("Raw JSON Response: \(jsonString)")
+                  }
+              })
+              .decode(type: MovieResponse.self, decoder: {
+                  let decoder = JSONDecoder()
+                  decoder.dateDecodingStrategy = .formatted(DateFormatter.yyyyMMdd)
+                  return decoder
+              }())
+              .receive(on: DispatchQueue.main)
+              .sink(receiveCompletion: { completion in
+                  if case .failure(let error) = completion {
+                      print("Error fetching upcoming movies: \(error.localizedDescription)")
+                  }
+              }, receiveValue: { response in
+                  let now = Date()
+                  let calendar = Calendar.current
+                  let sevenDaysFromNow = calendar.date(byAdding: .day, value: 7, to: now)!
+                  let threeWeeksFromNow = calendar.date(byAdding: .weekOfYear, value: 3, to: now)!
+                  
+                  self.filteredUpcomingMovies = response.results.filter { movie in
+                      guard let releaseDate = movie.releaseDate else { return false }
+                      return releaseDate > sevenDaysFromNow && releaseDate <= threeWeeksFromNow
+                  }
+              })
+              .store(in: &self.cancellables)
+      }
 
     
 
