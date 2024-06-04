@@ -2,32 +2,47 @@ import SwiftUI
 
 struct MainView: View {
     @Binding var profile: Profile
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+
     var body: some View {
         TabView {
-            Group {
-                NavigationView {
+            NavigationView {
+                if horizontalSizeClass == .compact {
                     HomePage(profile: $profile)
+                } else {
+                    Sidebar()
+                    HomePage(profile: $profile) // Default content
                 }
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
-                }
+            }
+            .tabItem {
+                Image(systemName: "house.fill")
+                Text("Home")
+            }
 
-                NavigationView {
+            NavigationView {
+                if horizontalSizeClass == .compact {
+                    MoviesPage()
+                } else {
+                    Sidebar()
                     MoviesPage()
                 }
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("Search")
-                }
+            }
+            .tabItem {
+                Image(systemName: "magnifyingglass")
+                Text("Search")
+            }
 
-                NavigationView {
+            NavigationView {
+                if horizontalSizeClass == .compact {
+                    ProfilePage()
+                } else {
+                    Sidebar()
                     ProfilePage()
                 }
-                .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Profile")
-                }
+            }
+            .tabItem {
+                Image(systemName: "person.fill")
+                Text("Profile")
             }
         }
         .accentColor(.foregroundWhite)
@@ -35,18 +50,38 @@ struct MainView: View {
             let appearance = UITabBarAppearance()
             appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
             appearance.backgroundColor = UIColor(Color.darkBlue.opacity(0.2))
-
             appearance.shadowColor = UIColor(Color.salmonPink)
 
             UITabBar.appearance().standardAppearance = appearance
             UITabBar.appearance().scrollEdgeAppearance = appearance
-
         }
     }
 }
 
-#Preview{
-    @State var profile = Profile.empty
-    
-    MainView(profile: $profile)
+struct Sidebar: View {
+    var body: some View {
+        List {
+            NavigationLink(destination: HomePage()) {
+                Label("Home", systemImage: "house.fill")
+            }
+            NavigationLink(destination: MoviesPage()) {
+                Label("Search", systemImage: "magnifyingglass")
+            }
+            NavigationLink(destination: ProfilePage()) {
+                Label("Profile", systemImage: "person.fill")
+            }
+        }
+        .listStyle(SidebarListStyle())
+    }
+}
+
+struct MainView_Previews: PreviewProvider {
+ @State var profile = Profile.empty
+
+    static var previews: some View {
+        MainView(profile: $profile)
+            .previewDevice("iPhone 12")
+        MainView(profile: $profile)
+            .previewDevice("iPad Pro (12.9-inch) (5th generation)")
+    }
 }
