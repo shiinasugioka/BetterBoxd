@@ -25,11 +25,11 @@ struct HomePage: View {
                 Color.darkBlue.edgesIgnoringSafeArea(.all)
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
-                        Text("Welcome, \($profile.username)!")
+                        // Access the username value directly
+                        Text("Welcome, \(profile.username)!")
                             .font(.title)
                             .padding(.horizontal)
                             .foregroundColor(.white)
-                        
                         
                         Text("Popular Movies 🍿")
                             .font(.headline)
@@ -123,10 +123,6 @@ struct HomePage: View {
                                 .foregroundColor(.white)
                                 .padding(.horizontal)
                         }
-
-                        
-
-                        
                     }
                 }
                 .sheet(item: $selectedMovie) { movie in
@@ -136,15 +132,3 @@ struct HomePage: View {
         }
     }
 }
-
-//struct HomePage_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let preview = HomePage_Previews()
-//        return Group {
-//            HomePage(profile: preview.$profile)
-//                .previewDevice("iPhone 12")
-//            HomePage()
-//                .previewDevice("iPad Pro (12.9-inch) (5th generation)")
-//        }
-//    }
-//}
