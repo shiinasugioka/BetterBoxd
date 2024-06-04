@@ -109,23 +109,36 @@ struct MovieDetailView: View {
 
                         Spacer()
 
-                        Button(action: {
-                            // Add review action
-                        }) {
-                            Text("Add your Review")
-                                .font(.headline)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(LinearGradient(
-                                    gradient: Gradient(colors: [Color.purple, Color.blue]),
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                ))
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
-                                .padding(.horizontal, 20)
+                        HStack {
+                            Spacer()
+                            Button(action: {
+                                // Add review action
+                            }) {
+                                Text("Add your Review")
+                                    .font(.headline)
+                                    .padding(.horizontal, 30)
+                                    .padding(.vertical, 10)
+                                    .background(
+                                        ZStack {
+                                            RoundedRectangle(cornerRadius: 20)
+                                                .fill(Color.white.opacity(0.2))
+                                            RoundedRectangle(cornerRadius: 20)
+                                                .stroke(
+                                                    LinearGradient(
+                                                        gradient: Gradient(colors: [Color.red, Color.yellow, Color.green, Color.blue]),
+                                                        startPoint: .leading,
+                                                        endPoint: .trailing
+                                                    ),
+                                                    lineWidth: 1
+                                                )
+                                        }
+                                        .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 2)
+                                    )
+                                    .foregroundColor(.white)
+                            }
+                            Spacer()
                         }
+                        .padding(.horizontal, 20)
                         .padding(.top, 20)
                         .padding(.bottom, 40)
                     }
@@ -138,7 +151,7 @@ struct MovieDetailView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     ZStack {
-                        VisualEffectBlur(effect: UIBlurEffect(style: .light), intensity: 1)
+                        Color.white.opacity(0.7)
                             .cornerRadius(10)
                         
                         Text(movie.title)
@@ -155,7 +168,7 @@ struct MovieDetailView: View {
                         Image(systemName: "xmark")
                             .foregroundColor(.black)
                             .padding(10)
-                            .background(VisualEffectBlur(effect: UIBlurEffect(style: .light), intensity: 1))
+                            .background(Color.white.opacity(0.7))
                             .cornerRadius(10)
                     }
                 }
