@@ -8,13 +8,19 @@ class RealmManager {
     private init() {
         // Configure Realm with migration
         let config = Realm.Configuration(
-            schemaVersion: 2, // Update the schema version if you make further changes
+            schemaVersion: 3, // Update the schema version if you make further changes
             migrationBlock: { migration, oldSchemaVersion in
                 if oldSchemaVersion < 2 {
-                    // Migrate from MovieId to Int for movieID in Review
+                    // Existing migration logic for schema version 2
+                } else if oldSchemaVersion < 3 {
+                    // Migration logic for schema version 3
                     migration.enumerateObjects(ofType: Review.className()) { oldObject, newObject in
-                        // Provide a default value for the new movieID field
-                        newObject?["movieID"] = 0
+                        // Handle the removal of the 'user' property and addition of the 'profile' property
+                        // for the 'Review' object
+                    }
+                    migration.enumerateObjects(ofType: UserMovieLists.className()) { oldObject, newObject in
+                        // Handle the removal of the 'user' property and addition of the 'profile' property
+                        // for the 'UserMovieLists' object
                     }
                 }
             }
@@ -33,16 +39,5 @@ class RealmManager {
         return Realm.Configuration()
     }
 
-    func addUser(name: String, email: String) {
-        let user = User()
-        user.name = name
-        user.email = email
-        
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(user)
-        }
-        
-        print("User added successfully")
-    }
+  
 }

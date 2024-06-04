@@ -41,19 +41,22 @@ class MoviesViewModel: ObservableObject {
         fetchUpcomingMovie()
         fetchReviewedMovies(for: userId)
     }
-    
+    private let jsonDecoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(DateFormatter.yyyyMMdd)
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.keyDecodingStrategy = .useDefaultKeys
+        return decoder
+    }()
     func fetchReviewedMovies(for userId: String) {
         let realm = try! Realm()
-        let reviews = realm.objects(Review.self).filter("user.id == %@", userId)
-        
+        let reviews = realm.objects(Review.self).filter("profile.id == %@", userId)
+
         let movieIds: [Int] = Array(reviews.compactMap { $0.movieID })
-        print("bruh")
         print("Movie IDs from reviews: \(movieIds)")
-        
+
         if !movieIds.isEmpty {
             fetchMovies(by: movieIds)
-            print("test2")
-            print(movieIds)
         }
     }
     
@@ -62,13 +65,50 @@ class MoviesViewModel: ObservableObject {
             self.reviewedMovies = []
             return
         }
-        
-        let realm = try! Realm()
-        let movies = realm.objects(Movie.self).filter("id IN %@", ids)
-        
-        self.reviewedMovies = Array(movies)
-        
-        print("Reviewed Movies: \(self.reviewedMovies.map { $0.title })")
+
+        let urlString = "https://api.themoviedb.org/3/movie/"
+        var movies: [Movie] = []
+
+        for id in ids {
+            let movieURL = "\(urlString)\(id)"
+            if let url = URL(string: movieURL) {
+                var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
+                components.queryItems = [
+                    URLQueryItem(name: "language", value: "en-US"),
+                    URLQueryItem(name: "api_key", value: apiKey)
+                ]
+
+                var request = URLRequest(url: components.url!)
+                request.httpMethod = "GET"
+                request.timeoutInterval = 10
+                request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+                URLSession.shared.dataTask(with: request) { [weak self] (data, response, error) in
+                    if let error = error {
+                        print("Error fetching movie \(id): \(error.localizedDescription)")
+                        return
+                    }
+
+                    guard let data = data else {
+                        print("Error: No data received for movie \(id)")
+                        return
+                    }
+
+                    do {
+                        let decodedMovie = try self?.jsonDecoder.decode(Movie.self, from: data)
+                        if let decodedMovie = decodedMovie {
+                            movies.append(decodedMovie)
+                        }
+                    } catch {
+                        print("Error decoding response for movie \(id): \(error)")
+                    }
+
+                    DispatchQueue.main.async {
+                        self?.reviewedMovies = movies
+                    }
+                }.resume()
+            }
+        }
     }
     
     func fetchUpcomingMovie() {

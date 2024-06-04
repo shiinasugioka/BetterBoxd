@@ -108,7 +108,7 @@ struct AddReviewView: View {
                 return
             }
             
-            review.profile = profile
+            review.profile = user
             review.movieID = movieID // Replace with actual movie ID
             review.rating = rating
             review.reviewText = reviewText
