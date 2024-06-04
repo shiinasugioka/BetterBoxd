@@ -55,44 +55,57 @@ struct MovieDetailView: View {
                             Spacer()
                         }
 
-                        HStack {
-                            Text(movie.title)
-                                .font(.largeTitle)
-                                .bold()
-                                .foregroundColor(.white)
-                                .padding(.leading, 20)
+                        ZStack {
+                            Color.black.opacity(0.2)
+                                .cornerRadius(10)
+                            
+                            HStack {
+                                Text(movie.title)
+                                    .font(.largeTitle)
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .padding()
 
-                            Spacer()
+                                Spacer()
 
-                            HStack(spacing: 10) {
-                                Button(action: {
-                                    // Favorite action
-                                }) {
-                                    Image(systemName: "heart")
-                                        .foregroundColor(.white)
-                                        .padding()
-                                        .background(Color.clear)
-                                        .clipShape(Circle())
+                                HStack(spacing: 10) {
+                                    Button(action: {
+                                        // Favorite action
+                                    }) {
+                                        Image(systemName: "heart")
+                                            .foregroundColor(.white)
+                                            .padding()
+                                            .background(Color.clear)
+                                            .clipShape(Circle())
+                                    }
+
+                                    Button(action: {
+                                        // Add to watchlist action
+                                    }) {
+                                        Image(systemName: "plus")
+                                            .foregroundColor(.white)
+                                            .padding()
+                                            .background(Color.clear)
+                                            .clipShape(Circle())
+                                    }
                                 }
-
-                                Button(action: {
-                                    // Add to watchlist action
-                                }) {
-                                    Image(systemName: "plus")
-                                        .foregroundColor(.white)
-                                        .padding()
-                                        .background(Color.clear)
-                                        .clipShape(Circle())
-                                }
+                                .padding()
                             }
-                            .padding(.trailing, 20)
                         }
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 5)
 
-                        Text(movie.overview)
-                            .font(.body)
-                            .foregroundColor(.white)
-                            .padding(.top, 5)
-                            .padding(.horizontal, 20)
+                        ZStack {
+                            Color.black.opacity(0.2)
+                                .cornerRadius(10)
+                            
+                            Text(movie.overview)
+                                .font(.body)
+                                .foregroundColor(.white)
+                                .padding()
+                        }
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 5)
 
                         Spacer()
 
@@ -119,22 +132,35 @@ struct MovieDetailView: View {
                     .padding(.bottom, 50)
                 }
             }
-            .background(Color.black.opacity(0.6))
-            .navigationTitle(movie.title)
+            .background(Color.white.opacity(0.1))
+            .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .principal) {
+                    ZStack {
+                        VisualEffectBlur(effect: UIBlurEffect(style: .light), intensity: 1)
+                            .cornerRadius(10)
+                        
+                        Text(movie.title)
+                            .font(.headline)
+                            .foregroundColor(.black)
+                            .padding()
+                    }
+                }
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         // Dismiss the modal
                         presentationMode.wrappedValue.dismiss()
                     }) {
                         Image(systemName: "xmark")
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
+                            .padding(10)
+                            .background(VisualEffectBlur(effect: UIBlurEffect(style: .light), intensity: 1))
+                            .cornerRadius(10)
                     }
                 }
             }
         }
     }
 }
-
 
