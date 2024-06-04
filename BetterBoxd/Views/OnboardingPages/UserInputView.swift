@@ -1,16 +1,10 @@
-//
-//  UserInputView.swift
-//  BetterBoxd
-//
-//  Created by Ahmed Ghaddah on 6/3/24.
-//
-
 import SwiftUI
 
 struct UserInputView: View {
     @Binding var profile: Profile
     @Binding var currentStep: OnboardingStep
-    
+    @State private var tempUsername: String = ""
+
     var body: some View {
         VStack {
             HStack {
@@ -28,7 +22,7 @@ struct UserInputView: View {
                 .font(.subheadline)
                 .multilineTextAlignment(.center)
             
-            TextField("Username", text: $profile.username)
+            TextField("Username", text: $tempUsername)
                 .padding()
                 .background(Color.fromHex("#F9F9F9"))
                 .cornerRadius(10)
@@ -53,6 +47,8 @@ struct UserInputView: View {
             .padding(.bottom, 30)
             
             Button(action: {
+                // Update the profile's username when "Next" is pressed
+                profile.username = tempUsername
                 currentStep = .bio
             }, label: {
                 Text("Next")
@@ -71,6 +67,10 @@ struct UserInputView: View {
                 .foregroundColor(.gray)
         }
         .padding(.horizontal, 20)
+        .onAppear {
+            // Initialize the temporary username with the current profile username
+            self.tempUsername = self.profile.username
+        }
     }
 }
 
