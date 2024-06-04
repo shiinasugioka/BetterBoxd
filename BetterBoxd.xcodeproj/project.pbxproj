@@ -14,10 +14,11 @@
 		DB2B302D2C0E8F6E000091D7 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B302C2C0E8F6E000091D7 /* VisualEffectBlur.swift */; };
 		DB34779F2C0E9DCD008AC00E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB34779E2C0E9DCD008AC00E /* Models.swift */; };
 		DB3477A42C0ED59C008AC00E /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3477A32C0ED59C008AC00E /* RealmManager.swift */; };
-		DB3477A72C0EEC58008AC00E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DB3477A62C0EEC58008AC00E /* Realm */; };
 		DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */; };
 		DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A982BFBC10200C676FC /* Assets.xcassets */; };
 		DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */; };
+		DB88C72F2C0EF9980056F655 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB88C72E2C0EF9980056F655 /* RealmSwift */; };
+		DB88C7302C0EF9980056F655 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = DB88C72E2C0EF9980056F655 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DBE4C0B02C01368D001B06CA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0AF2C01368D001B06CA /* Colors.swift */; };
 		DBE4C0B52C013838001B06CA /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0B42C013838001B06CA /* HomePage.swift */; };
 		DBE4C0B72C0683CD001B06CA /* MoviesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0B62C0683CD001B06CA /* MoviesPage.swift */; };
@@ -32,6 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				DB88C7302C0EF9980056F655 /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,18 +65,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB3477A72C0EEC58008AC00E /* Realm in Frameworks */,
+				DB88C72F2C0EF9980056F655 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB3477A82C0EF1E5008AC00E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DB419A882BFBC0FF00C676FC = {
 			isa = PBXGroup;
 			children = (
 				DB419A932BFBC0FF00C676FC /* BetterBoxd */,
 				DB419A922BFBC0FF00C676FC /* Products */,
+				DB3477A82C0EF1E5008AC00E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,7 +201,7 @@
 			);
 			name = BetterBoxd;
 			packageProductDependencies = (
-				DB3477A62C0EEC58008AC00E /* Realm */,
+				DB88C72E2C0EF9980056F655 /* RealmSwift */,
 			);
 			productName = BetterBoxd;
 			productReference = DB419A912BFBC0FF00C676FC /* BetterBoxd.app */;
@@ -483,10 +493,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DB3477A62C0EEC58008AC00E /* Realm */ = {
+		DB88C72E2C0EF9980056F655 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DB3477992C0E96D4008AC00E /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

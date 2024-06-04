@@ -14,6 +14,9 @@ class RealmManager {
     var localRealm: Realm? // until auth0 is set up
     
     private init() {
+        // use this to connect to realm studio
+        let realm = try! Realm()
+        print("Realm is located at:", realm.configuration.fileURL!)
         
         if let appId = Bundle.main.object(forInfoDictionaryKey: "REALM_APP_ID") as? String {
             self.app = RealmSwift.App(id: appId)
