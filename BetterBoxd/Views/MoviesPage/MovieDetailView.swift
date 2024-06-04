@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MovieDetailView: View {
     let movie: Movie
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         NavigationView {
@@ -96,20 +97,26 @@ struct MovieDetailView: View {
                         Spacer()
 
                         Button(action: {
-                            // Add your review action
+                            // Add review action
                         }) {
                             Text("Add your Review")
                                 .font(.headline)
                                 .frame(maxWidth: .infinity)
                                 .padding()
-                                .background(Color.blue)
+                                .background(LinearGradient(
+                                    gradient: Gradient(colors: [Color.purple, Color.blue]),
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                ))
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
+                                .shadow(color: .gray, radius: 5, x: 0, y: 2)
                                 .padding(.horizontal, 20)
                         }
                         .padding(.top, 20)
+                        .padding(.bottom, 40)
                     }
-                    .padding(.bottom, 30)
+                    .padding(.bottom, 50)
                 }
             }
             .background(Color.black.opacity(0.6))
@@ -119,8 +126,9 @@ struct MovieDetailView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         // Dismiss the modal
+                        presentationMode.wrappedValue.dismiss()
                     }) {
-                        Image(systemName: "chevron.left")
+                        Image(systemName: "xmark")
                             .foregroundColor(.white)
                     }
                 }
@@ -128,4 +136,5 @@ struct MovieDetailView: View {
         }
     }
 }
+
 
