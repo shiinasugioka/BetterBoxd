@@ -1,17 +1,17 @@
 import SwiftUI
 
 struct HomePage: View {
+    @Binding var profile: Profile
     @ObservedObject var viewModel = MoviesViewModel()
-    @State private var selectedMovie: Movie? = nil
-    private var userName: String = "UserName"
-
+    @State var selectedMovie: Movie? = nil
+    
     var body: some View {
         NavigationView {
             ZStack {
                 Color.darkBlue.edgesIgnoringSafeArea(.all)
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
-                        Text("Welcome, \(userName)!")
+                        Text("Welcome, \($profile.username)!")
                             .font(.title)
                             .padding(.horizontal)
                             .foregroundColor(.white)
@@ -120,11 +120,5 @@ struct HomePage: View {
                 }
             }
         }
-    }
-}
-
-struct HomePage_Previews: PreviewProvider {
-    static var previews: some View {
-        HomePage()
     }
 }

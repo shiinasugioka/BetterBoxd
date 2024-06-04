@@ -1,11 +1,12 @@
 import SwiftUI
 
 struct MainView: View {
+    @Binding var profile: Profile
     var body: some View {
         TabView {
             Group {
                 NavigationView {
-                    HomePage()
+                    HomePage(profile: $profile)
                 }
                 .tabItem {
                     Image(systemName: "house.fill")
@@ -43,8 +44,3 @@ struct MainView: View {
         }
     }
 }
-
-#Preview {
-    MainView()
-}
-

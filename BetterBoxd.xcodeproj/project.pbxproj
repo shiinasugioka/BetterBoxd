@@ -13,6 +13,13 @@
 		BB9D9A462C0EA6560044634D /* CountdownCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D9A452C0EA6560044634D /* CountdownCard.swift */; };
 		CF3A140C2C0EDBFF008DE466 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF3A140B2C0EDBFF008DE466 /* Auth0.plist */; };
 		CF3A140F2C0EDC5B008DE466 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = CF3A140E2C0EDC5B008DE466 /* Auth0 */; };
+		CF3A14112C0EDCEA008DE466 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A14102C0EDCEA008DE466 /* Profile.swift */; };
+		CF3A14132C0EDD27008DE466 /* OnboardingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A14122C0EDD27008DE466 /* OnboardingSteps.swift */; };
+		CF3A14152C0EDD66008DE466 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A14142C0EDD66008DE466 /* AuthController.swift */; };
+		CF3A14182C0EDDC0008DE466 /* AuthStarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A14172C0EDDC0008DE466 /* AuthStarterView.swift */; };
+		CF3A141A2C0EDE42008DE466 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A14192C0EDE42008DE466 /* OnboardingView.swift */; };
+		CF3A141C2C0EDE82008DE466 /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A141B2C0EDE82008DE466 /* UserInputView.swift */; };
+		CF3A141E2C0EE0DA008DE466 /* BioInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3A141D2C0EE0DA008DE466 /* BioInputView.swift */; };
 		DB2B302D2C0E8F6E000091D7 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B302C2C0E8F6E000091D7 /* VisualEffectBlur.swift */; };
 		DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */; };
 		DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A982BFBC10200C676FC /* Assets.xcassets */; };
@@ -31,6 +38,13 @@
 		BB9D9A452C0EA6560044634D /* CountdownCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownCard.swift; sourceTree = "<group>"; };
 		CF3A14092C0EDB14008DE466 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		CF3A140B2C0EDBFF008DE466 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Auth0.plist; path = BetterBoxd/Auth0.plist; sourceTree = SOURCE_ROOT; };
+		CF3A14102C0EDCEA008DE466 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = BetterBoxd/Profile.swift; sourceTree = SOURCE_ROOT; };
+		CF3A14122C0EDD27008DE466 /* OnboardingSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingSteps.swift; path = BetterBoxd/OnboardingSteps.swift; sourceTree = SOURCE_ROOT; };
+		CF3A14142C0EDD66008DE466 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthController.swift; path = BetterBoxd/AuthController.swift; sourceTree = SOURCE_ROOT; };
+		CF3A14172C0EDDC0008DE466 /* AuthStarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStarterView.swift; sourceTree = "<group>"; };
+		CF3A14192C0EDE42008DE466 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		CF3A141B2C0EDE82008DE466 /* UserInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
+		CF3A141D2C0EE0DA008DE466 /* BioInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioInputView.swift; sourceTree = "<group>"; };
 		DB2B302C2C0E8F6E000091D7 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		DB419A912BFBC0FF00C676FC /* BetterBoxd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterBoxd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterBoxdApp.swift; sourceTree = "<group>"; };
@@ -55,6 +69,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF3A14162C0EDD86008DE466 /* OnboardingPages */ = {
+			isa = PBXGroup;
+			children = (
+				CF3A14172C0EDDC0008DE466 /* AuthStarterView.swift */,
+				CF3A14192C0EDE42008DE466 /* OnboardingView.swift */,
+				CF3A141B2C0EDE82008DE466 /* UserInputView.swift */,
+				CF3A141D2C0EE0DA008DE466 /* BioInputView.swift */,
+			);
+			path = OnboardingPages;
+			sourceTree = "<group>";
+		};
 		DB419A882BFBC0FF00C676FC = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +121,7 @@
 		DBE4C0A82C01360D001B06CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CF3A14162C0EDD86008DE466 /* OnboardingPages */,
 				DBE4C0AE2C013673001B06CA /* MoviesPage */,
 				DBE4C0AD2C01366D001B06CA /* ProfilePage */,
 				DBE4C0AC2C013665001B06CA /* HomePage */,
@@ -119,6 +145,9 @@
 				BB121E622C08F97C00D00A5E /* Movie.swift */,
 				BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */,
 				CF3A140B2C0EDBFF008DE466 /* Auth0.plist */,
+				CF3A14102C0EDCEA008DE466 /* Profile.swift */,
+				CF3A14122C0EDD27008DE466 /* OnboardingSteps.swift */,
+				CF3A14142C0EDD66008DE466 /* AuthController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,14 +256,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB121E632C08F97C00D00A5E /* Movie.swift in Sources */,
+				CF3A14112C0EDCEA008DE466 /* Profile.swift in Sources */,
+				CF3A141E2C0EE0DA008DE466 /* BioInputView.swift in Sources */,
 				DBE4C0B52C013838001B06CA /* HomePage.swift in Sources */,
 				DBE4C0BB2C068552001B06CA /* MainView.swift in Sources */,
+				CF3A14132C0EDD27008DE466 /* OnboardingSteps.swift in Sources */,
+				CF3A14152C0EDD66008DE466 /* AuthController.swift in Sources */,
 				BB6067992C09174500F9195A /* MovieDetailView.swift in Sources */,
+				CF3A141C2C0EDE82008DE466 /* UserInputView.swift in Sources */,
 				DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */,
 				BB9D9A462C0EA6560044634D /* CountdownCard.swift in Sources */,
 				DB2B302D2C0E8F6E000091D7 /* VisualEffectBlur.swift in Sources */,
 				DBE4C0B92C0683DA001B06CA /* ProfilePage.swift in Sources */,
 				DBE4C0B02C01368D001B06CA /* Colors.swift in Sources */,
+				CF3A14182C0EDDC0008DE466 /* AuthStarterView.swift in Sources */,
+				CF3A141A2C0EDE42008DE466 /* OnboardingView.swift in Sources */,
 				DBE4C0B72C0683CD001B06CA /* MoviesPage.swift in Sources */,
 				BB121E672C08FB8100D00A5E /* MoviesViewModel.swift in Sources */,
 			);
