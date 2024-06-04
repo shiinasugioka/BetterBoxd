@@ -22,6 +22,15 @@ struct ProfilePage: View {
     }
 }
 
-#Preview {
-    ProfilePage()
+//#Preview {
+//    ProfilePage()
+//}
+struct ProfilePage_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfilePage()
+            .previewDevice("iPhone 12")
+        ProfilePage()
+            .previewDevice("iPad Pro (12.9-inch) (5th generation)")
+    }
 }
+
