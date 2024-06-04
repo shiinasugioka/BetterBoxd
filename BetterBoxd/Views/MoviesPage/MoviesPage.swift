@@ -114,7 +114,7 @@ struct MoviesPage: View {
             }
         }
     }
-}
+
 
 struct MovieCard: View {
     let movie: Movie

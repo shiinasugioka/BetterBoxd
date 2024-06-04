@@ -1,6 +1,24 @@
 {
-  "originHash" : "182db11c87d1734fe53a6366b674339f70901a93290bd85def29b63e25e34c43",
+  "originHash" : "28e179f105634f7a2842625049b7c79ebecdcf63795d6c270252fc5431ec255f",
   "pins" : [
+    {
+      "identity" : "auth0.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/auth0/Auth0.swift",
+      "state" : {
+        "revision" : "8ea170b214d2447f525b25ac27ca4874e142451c",
+        "version" : "2.7.2"
+      }
+    },
+    {
+      "identity" : "jwtdecode.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/auth0/JWTDecode.swift",
+      "state" : {
+        "revision" : "58af7278797871e460d79496621b3e5366b865b2",
+        "version" : "3.1.0"
+      }
+    },
     {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
@@ -17,6 +35,15 @@
       "state" : {
         "branch" : "master",
         "revision" : "21ac01d5ae30dcc156e0e43e47c4afe39cc0367f"
+      }
+    },
+    {
+      "identity" : "simplekeychain",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/auth0/SimpleKeychain.git",
+      "state" : {
+        "revision" : "f082494aab8056139a4fe234c920a9f92f681aff",
+        "version" : "1.1.0"
       }
     }
   ],

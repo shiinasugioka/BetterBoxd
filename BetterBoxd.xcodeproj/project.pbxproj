@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB121E632C08F97C00D00A5E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB121E622C08F97C00D00A5E /* Movie.swift */; };
-		BB121E672C08FB8100D00A5E /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */; };
 		BB6067992C09174500F9195A /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6067982C09174500F9195A /* MovieDetailView.swift */; };
 		BB9D9A462C0EA6560044634D /* CountdownCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D9A452C0EA6560044634D /* CountdownCard.swift */; };
+		BBBF56E72C0F15C2006B799B /* OnboardingSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBF56DE2C0F15C2006B799B /* OnboardingSteps.swift */; };
+		BBBF56ED2C0F15C2006B799B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBF56E42C0F15C2006B799B /* RealmManager.swift */; };
+		BBBF56EE2C0F15C2006B799B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBF56E52C0F15C2006B799B /* Profile.swift */; };
+		BBBF56EF2C0F15C2006B799B /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBF56E62C0F15C2006B799B /* AuthController.swift */; };
+		BBBF56F82C0F1738006B799B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BBBF56F72C0F1738006B799B /* RealmSwift */; };
+		BBEC72312C0F190400D228B0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC72302C0F190400D228B0 /* Movie.swift */; };
+		BBEC72332C0F191600D228B0 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC72322C0F191600D228B0 /* MoviesViewModel.swift */; };
+		BBEC72372C0F19BD00D228B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC72362C0F19BD00D228B0 /* ContentView.swift */; };
+		BBEC72392C0F19C600D228B0 /* BetterBoxdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC72382C0F19C600D228B0 /* BetterBoxdApp.swift */; };
+		BBEC723B2C0F1A0100D228B0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC723A2C0F1A0100D228B0 /* MainView.swift */; };
+		BBEC723E2C0F1A3600D228B0 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = BBEC723D2C0F1A3600D228B0 /* JWTDecode */; };
+		BBEC72412C0F1A9100D228B0 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = BBEC72402C0F1A9100D228B0 /* Auth0 */; };
+		BBEC72472C0F1B3600D228B0 /* AuthStarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC72422C0F1B3600D228B0 /* AuthStarterView.swift */; };
+		BBEC72482C0F1B3600D228B0 /* BioInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC72432C0F1B3600D228B0 /* BioInputView.swift */; };
+		BBEC72492C0F1B3600D228B0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC72442C0F1B3600D228B0 /* OnboardingView.swift */; };
+		BBEC724A2C0F1B3600D228B0 /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEC72452C0F1B3600D228B0 /* UserInputView.swift */; };
+		BBEC724C2C0F1BF300D228B0 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBEC724B2C0F1BF300D228B0 /* Auth0.plist */; };
 		DB2B302D2C0E8F6E000091D7 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B302C2C0E8F6E000091D7 /* VisualEffectBlur.swift */; };
 		DB34779F2C0E9DCD008AC00E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB34779E2C0E9DCD008AC00E /* Models.swift */; };
-		DB3477A42C0ED59C008AC00E /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3477A32C0ED59C008AC00E /* RealmManager.swift */; };
-		DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */; };
 		DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A982BFBC10200C676FC /* Assets.xcassets */; };
 		DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */; };
-		DB88C72F2C0EF9980056F655 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB88C72E2C0EF9980056F655 /* RealmSwift */; };
-		DB88C7302C0EF9980056F655 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = DB88C72E2C0EF9980056F655 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DBE4C0B02C01368D001B06CA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0AF2C01368D001B06CA /* Colors.swift */; };
 		DBE4C0B52C013838001B06CA /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0B42C013838001B06CA /* HomePage.swift */; };
 		DBE4C0B72C0683CD001B06CA /* MoviesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0B62C0683CD001B06CA /* MoviesPage.swift */; };
 		DBE4C0B92C0683DA001B06CA /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0B82C0683DA001B06CA /* ProfilePage.swift */; };
-		DBE4C0BB2C068552001B06CA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0BA2C068552001B06CA /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,7 +43,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DB88C7302C0EF9980056F655 /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,23 +50,32 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BB121E622C08F97C00D00A5E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = BetterBoxd/Views/Movie.swift; sourceTree = SOURCE_ROOT; };
-		BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoviesViewModel.swift; path = BetterBoxd/Utils/MoviesViewModel.swift; sourceTree = SOURCE_ROOT; };
 		BB6067982C09174500F9195A /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		BB9D9A452C0EA6560044634D /* CountdownCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownCard.swift; sourceTree = "<group>"; };
+		BBBF56DE2C0F15C2006B799B /* OnboardingSteps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingSteps.swift; sourceTree = "<group>"; };
+		BBBF56E42C0F15C2006B799B /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		BBBF56E52C0F15C2006B799B /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		BBBF56E62C0F15C2006B799B /* AuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		BBBF56F32C0F16A9006B799B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBEC72302C0F190400D228B0 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = BetterBoxd/Views/Models/Movie.swift; sourceTree = SOURCE_ROOT; };
+		BBEC72322C0F191600D228B0 /* MoviesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviesViewModel.swift; path = BetterBoxd/Views/Models/MoviesViewModel.swift; sourceTree = SOURCE_ROOT; };
+		BBEC72362C0F19BD00D228B0 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BBEC72382C0F19C600D228B0 /* BetterBoxdApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetterBoxdApp.swift; sourceTree = "<group>"; };
+		BBEC723A2C0F1A0100D228B0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BBEC72422C0F1B3600D228B0 /* AuthStarterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthStarterView.swift; sourceTree = "<group>"; };
+		BBEC72432C0F1B3600D228B0 /* BioInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BioInputView.swift; sourceTree = "<group>"; };
+		BBEC72442C0F1B3600D228B0 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		BBEC72452C0F1B3600D228B0 /* UserInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
+		BBEC724B2C0F1BF300D228B0 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		DB2B302C2C0E8F6E000091D7 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		DB34779E2C0E9DCD008AC00E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		DB3477A32C0ED59C008AC00E /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		DB419A912BFBC0FF00C676FC /* BetterBoxd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterBoxd.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterBoxdApp.swift; sourceTree = "<group>"; };
 		DB419A982BFBC10200C676FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DB55D3352C0938D6003647CA /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		DBE4C0AF2C01368D001B06CA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		DBE4C0B42C013838001B06CA /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		DBE4C0B62C0683CD001B06CA /* MoviesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesPage.swift; sourceTree = "<group>"; };
 		DBE4C0B82C0683DA001B06CA /* ProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePage.swift; sourceTree = "<group>"; };
-		DBE4C0BA2C068552001B06CA /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +83,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB88C72F2C0EF9980056F655 /* RealmSwift in Frameworks */,
+				BBEC72412C0F1A9100D228B0 /* Auth0 in Frameworks */,
+				BBEC723E2C0F1A3600D228B0 /* JWTDecode in Frameworks */,
+				BBBF56F82C0F1738006B799B /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BBB08F022C0F15500018B07C /* Views2 */ = {
+			isa = PBXGroup;
+			children = (
+				BBBF56E62C0F15C2006B799B /* AuthController.swift */,
+				BBBF56DE2C0F15C2006B799B /* OnboardingSteps.swift */,
+				BBBF56E52C0F15C2006B799B /* Profile.swift */,
+				BBBF56E42C0F15C2006B799B /* RealmManager.swift */,
+			);
+			path = Views2;
+			sourceTree = "<group>";
+		};
+		BBEC72462C0F1B3600D228B0 /* OnboardingPages */ = {
+			isa = PBXGroup;
+			children = (
+				BBEC72422C0F1B3600D228B0 /* AuthStarterView.swift */,
+				BBEC72432C0F1B3600D228B0 /* BioInputView.swift */,
+				BBEC72442C0F1B3600D228B0 /* OnboardingView.swift */,
+				BBEC72452C0F1B3600D228B0 /* UserInputView.swift */,
+			);
+			path = OnboardingPages;
+			sourceTree = "<group>";
+		};
 		DB3477A82C0EF1E5008AC00E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,15 +141,14 @@
 		DB419A932BFBC0FF00C676FC /* BetterBoxd */ = {
 			isa = PBXGroup;
 			children = (
+				BBEC72382C0F19C600D228B0 /* BetterBoxdApp.swift */,
+				BBBF56F32C0F16A9006B799B /* Info.plist */,
 				DBE4C0AB2C01363A001B06CA /* Models */,
-				DBE4C0AA2C013625001B06CA /* Resources */,
 				DBE4C0A92C01361E001B06CA /* Utils */,
 				DBE4C0A82C01360D001B06CA /* Views */,
-				DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */,
 				DB419A982BFBC10200C676FC /* Assets.xcassets */,
 				DB419A9A2BFBC10200C676FC /* Preview Content */,
-				DB55D3352C0938D6003647CA /* info.plist */,
-				DB3477A32C0ED59C008AC00E /* RealmManager.swift */,
+				BBEC724B2C0F1BF300D228B0 /* Auth0.plist */,
 			);
 			path = BetterBoxd;
 			sourceTree = "<group>";
@@ -123,10 +164,13 @@
 		DBE4C0A82C01360D001B06CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BBEC72462C0F1B3600D228B0 /* OnboardingPages */,
+				BBEC72362C0F19BD00D228B0 /* ContentView.swift */,
+				BBB08F022C0F15500018B07C /* Views2 */,
 				DBE4C0AE2C013673001B06CA /* MoviesPage */,
 				DBE4C0AD2C01366D001B06CA /* ProfilePage */,
 				DBE4C0AC2C013665001B06CA /* HomePage */,
-				DBE4C0BA2C068552001B06CA /* MainView.swift */,
+				BBEC723A2C0F1A0100D228B0 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,18 +184,11 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		DBE4C0AA2C013625001B06CA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		DBE4C0AB2C01363A001B06CA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BB121E622C08F97C00D00A5E /* Movie.swift */,
-				BB121E662C08FB8100D00A5E /* MoviesViewModel.swift */,
+				BBEC72302C0F190400D228B0 /* Movie.swift */,
+				BBEC72322C0F191600D228B0 /* MoviesViewModel.swift */,
 				DB34779E2C0E9DCD008AC00E /* Models.swift */,
 			);
 			path = Models;
@@ -201,7 +238,9 @@
 			);
 			name = BetterBoxd;
 			packageProductDependencies = (
-				DB88C72E2C0EF9980056F655 /* RealmSwift */,
+				BBBF56F72C0F1738006B799B /* RealmSwift */,
+				BBEC723D2C0F1A3600D228B0 /* JWTDecode */,
+				BBEC72402C0F1A9100D228B0 /* Auth0 */,
 			);
 			productName = BetterBoxd;
 			productReference = DB419A912BFBC0FF00C676FC /* BetterBoxd.app */;
@@ -233,6 +272,8 @@
 			mainGroup = DB419A882BFBC0FF00C676FC;
 			packageReferences = (
 				DB3477992C0E96D4008AC00E /* XCRemoteSwiftPackageReference "realm-swift" */,
+				BBEC723C2C0F1A3600D228B0 /* XCRemoteSwiftPackageReference "JWTDecode" */,
+				BBEC723F2C0F1A9100D228B0 /* XCRemoteSwiftPackageReference "Auth0" */,
 			);
 			productRefGroup = DB419A922BFBC0FF00C676FC /* Products */;
 			projectDirPath = "";
@@ -249,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */,
+				BBEC724C2C0F1BF300D228B0 /* Auth0.plist in Resources */,
 				DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,19 +302,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB3477A42C0ED59C008AC00E /* RealmManager.swift in Sources */,
+				BBBF56E72C0F15C2006B799B /* OnboardingSteps.swift in Sources */,
+				BBBF56EE2C0F15C2006B799B /* Profile.swift in Sources */,
+				BBEC72372C0F19BD00D228B0 /* ContentView.swift in Sources */,
+				BBEC72312C0F190400D228B0 /* Movie.swift in Sources */,
 				DB34779F2C0E9DCD008AC00E /* Models.swift in Sources */,
-				BB121E632C08F97C00D00A5E /* Movie.swift in Sources */,
 				DBE4C0B52C013838001B06CA /* HomePage.swift in Sources */,
-				DBE4C0BB2C068552001B06CA /* MainView.swift in Sources */,
+				BBEC72472C0F1B3600D228B0 /* AuthStarterView.swift in Sources */,
 				BB6067992C09174500F9195A /* MovieDetailView.swift in Sources */,
-				DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */,
 				BB9D9A462C0EA6560044634D /* CountdownCard.swift in Sources */,
+				BBBF56ED2C0F15C2006B799B /* RealmManager.swift in Sources */,
+				BBEC724A2C0F1B3600D228B0 /* UserInputView.swift in Sources */,
 				DB2B302D2C0E8F6E000091D7 /* VisualEffectBlur.swift in Sources */,
 				DBE4C0B92C0683DA001B06CA /* ProfilePage.swift in Sources */,
+				BBEC723B2C0F1A0100D228B0 /* MainView.swift in Sources */,
+				BBEC72492C0F1B3600D228B0 /* OnboardingView.swift in Sources */,
+				BBEC72392C0F19C600D228B0 /* BetterBoxdApp.swift in Sources */,
+				BBEC72332C0F191600D228B0 /* MoviesViewModel.swift in Sources */,
 				DBE4C0B02C01368D001B06CA /* Colors.swift in Sources */,
 				DBE4C0B72C0683CD001B06CA /* MoviesPage.swift in Sources */,
-				BB121E672C08FB8100D00A5E /* MoviesViewModel.swift in Sources */,
+				BBEC72482C0F1B3600D228B0 /* BioInputView.swift in Sources */,
+				BBBF56EF2C0F15C2006B799B /* AuthController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +532,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BBEC723C2C0F1A3600D228B0 /* XCRemoteSwiftPackageReference "JWTDecode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
+		BBEC723F2C0F1A9100D228B0 /* XCRemoteSwiftPackageReference "Auth0" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/Auth0.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.2;
+			};
+		};
 		DB3477992C0E96D4008AC00E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -493,10 +559,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DB88C72E2C0EF9980056F655 /* RealmSwift */ = {
+		BBBF56F72C0F1738006B799B /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DB3477992C0E96D4008AC00E /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		BBEC723D2C0F1A3600D228B0 /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBEC723C2C0F1A3600D228B0 /* XCRemoteSwiftPackageReference "JWTDecode" */;
+			productName = JWTDecode;
+		};
+		BBEC72402C0F1A9100D228B0 /* Auth0 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBEC723F2C0F1A9100D228B0 /* XCRemoteSwiftPackageReference "Auth0" */;
+			productName = Auth0;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
