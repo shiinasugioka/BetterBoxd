@@ -10,7 +10,7 @@ struct MainView: View {
                 if horizontalSizeClass == .compact {
                     HomePage(profile: $profile)
                 } else {
-                    Sidebar()
+                    Sidebar(profile: $profile)
                     HomePage(profile: $profile) // Default content
                 }
             }
@@ -23,7 +23,7 @@ struct MainView: View {
                 if horizontalSizeClass == .compact {
                     MoviesPage()
                 } else {
-                    Sidebar()
+                    Sidebar(profile: $profile)
                     MoviesPage()
                 }
             }
@@ -36,7 +36,7 @@ struct MainView: View {
                 if horizontalSizeClass == .compact {
                     ProfilePage()
                 } else {
-                    Sidebar()
+                    Sidebar(profile: $profile)
                     ProfilePage()
                 }
             }
@@ -59,9 +59,11 @@ struct MainView: View {
 }
 
 struct Sidebar: View {
+    @Binding var profile: Profile
+    
     var body: some View {
         List {
-            NavigationLink(destination: HomePage()) {
+            NavigationLink(destination: HomePage(profile: $profile)) {
                 Label("Home", systemImage: "house.fill")
             }
             NavigationLink(destination: MoviesPage()) {
@@ -75,13 +77,13 @@ struct Sidebar: View {
     }
 }
 
-struct MainView_Previews: PreviewProvider {
- @State var profile = Profile.empty
-
-    static var previews: some View {
-        MainView(profile: $profile)
-            .previewDevice("iPhone 12")
-        MainView(profile: $profile)
-            .previewDevice("iPad Pro (12.9-inch) (5th generation)")
-    }
-}
+//struct MainView_Previews: PreviewProvider {
+// @State var profile = Profile.empty
+//
+//    static var previews: some View {
+//        MainView(profile: $profile)
+//            .previewDevice("iPhone 12")
+//        MainView(profile: $profile)
+//            .previewDevice("iPad Pro (12.9-inch) (5th generation)")
+//    }
+//}
