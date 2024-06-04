@@ -7,91 +7,94 @@ struct MoviesPage: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
-                    // Search Bar
-                    HStack {
-                        TextField("Look for a movie 🎬", text: $searchText, onEditingChanged: { _ in
-                            viewModel.searchMovies(query: searchText)
-                        })
-                        .padding()
-                        .background(Color(.systemGray6))
-                        .cornerRadius(10)
-
-                        Button(action: {
-                            viewModel.searchMovies(query: searchText)
-                        }) {
-                            Image(systemName: "magnifyingglass")
-                                .padding()
-                                .background(Color(.systemGray6))
-                                .cornerRadius(10)
-                        }
-                    }
-                    .padding(.horizontal)
-
-                    // Autocomplete Results
-                    if !viewModel.autocompleteResults.isEmpty {
-                        VStack(alignment: .leading) {
-                            ForEach(viewModel.autocompleteResults) { movie in
-                                Text(movie.title)
+            ZStack {
+                Color.darkBlue.edgesIgnoringSafeArea(.all)
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 16) {
+                        // Search Bar
+                        HStack {
+                            TextField("Look for a movie 🎬", text: $searchText, onEditingChanged: { _ in
+                                viewModel.searchMovies(query: searchText)
+                            })
+                            .padding()
+                            .background(Color(.systemGray6))
+                            .cornerRadius(10)
+                            
+                            Button(action: {
+                                viewModel.searchMovies(query: searchText)
+                            }) {
+                                Image(systemName: "magnifyingglass")
                                     .padding()
                                     .background(Color(.systemGray6))
                                     .cornerRadius(10)
-                                    .onTapGesture {
-                                        searchText = movie.title
-                                        viewModel.searchMovies(query: movie.title)
-                                    }
                             }
                         }
                         .padding(.horizontal)
-                    }
-
-                    // Recently Searched
-                    Text("Recently searched ✈️")
-                        .font(.headline)
-                        .padding(.horizontal)
-
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 10) {
-                            ForEach(viewModel.searchedMovies) { movie in
-                                MovieCard(movie: movie)
-                                    .onTapGesture {
-                                        selectedMovie = movie
-                                    }
+                        
+                        // Autocomplete Results
+                        if !viewModel.autocompleteResults.isEmpty {
+                            VStack(alignment: .leading) {
+                                ForEach(viewModel.autocompleteResults) { movie in
+                                    Text(movie.title)
+                                        .padding()
+                                        .background(Color(.systemGray6))
+                                        .cornerRadius(10)
+                                        .onTapGesture {
+                                            searchText = movie.title
+                                            viewModel.searchMovies(query: movie.title)
+                                        }
+                                }
                             }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
-                    }
-
-                    // Movie Highlight of the Day
-                    Text("Movie highlight of the day 🕒")
-                        .font(.headline)
-                        .padding(.horizontal)
-
-                    MovieHighlightCard(movie: viewModel.popularMovies.first ?? Movie(id: 3, title: "Shutter Island", overview: "In 1954, a U.S. Marshal investigates the disappearance of a murderer, who escaped from a hospital for the criminally insane.", posterPath: "/52d8Y2aE2xUJd7Qkq6Yv0UMu3fh.jpg"))
-                        .padding(.horizontal)
-
-                    // Popular Movies
-                    Text("Popular Movies 🍿")
-                        .font(.headline)
-                        .padding(.horizontal)
-
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 10) {
-                            ForEach(viewModel.popularMovies) { movie in
-                                MovieCard(movie: movie)
-                                    .onTapGesture {
-                                        selectedMovie = movie
-                                    }
+                        
+                        // Recently Searched
+                        Text("Recently searched ✈️")
+                            .font(.headline)
+                            .padding(.horizontal)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 10) {
+                                ForEach(viewModel.searchedMovies) { movie in
+                                    MovieCard(movie: movie)
+                                        .onTapGesture {
+                                            selectedMovie = movie
+                                        }
+                                }
                             }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
+                        
+                        // Movie Highlight of the Day
+                        Text("Movie highlight of the day 🕒")
+                            .font(.headline)
+                            .padding(.horizontal)
+                        
+                        MovieHighlightCard(movie: viewModel.popularMovies.first ?? Movie(id: 3, title: "Shutter Island", overview: "In 1954, a U.S. Marshal investigates the disappearance of a murderer, who escaped from a hospital for the criminally insane.", posterPath: "/52d8Y2aE2xUJd7Qkq6Yv0UMu3fh.jpg"))
+                            .padding(.horizontal)
+                        
+                        // Popular Movies
+                        Text("Popular Movies 🍿")
+                            .font(.headline)
+                            .padding(.horizontal)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 10) {
+                                ForEach(viewModel.popularMovies) { movie in
+                                    MovieCard(movie: movie)
+                                        .onTapGesture {
+                                            selectedMovie = movie
+                                        }
+                                }
+                            }
+                            .padding(.horizontal)
+                        }
                     }
                 }
-            }
-            .navigationTitle("Search Movies")
-            .sheet(item: $selectedMovie) { movie in
-                MovieDetailView(movie: movie)
+                //            .navigationTitle("Search Movies")
+                .sheet(item: $selectedMovie) { movie in
+                    MovieDetailView(movie: movie)
+                }
             }
         }
     }

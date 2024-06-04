@@ -6,6 +6,7 @@ struct MainView: View {
             Group {
                 NavigationView {
                     HomePage()
+           
                 }
                 .tabItem {
                     Image(systemName: "house.fill")
