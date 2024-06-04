@@ -1,4 +1,5 @@
 import Foundation
+import RealmSwift
 
 struct Movie: Identifiable, Codable {
     let id: Int

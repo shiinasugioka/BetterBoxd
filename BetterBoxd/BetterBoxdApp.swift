@@ -1,11 +1,17 @@
 import SwiftUI
+import RealmSwift
 
 @main
-struct BetterBoxdApp: App {
+struct BetterBoxdApp: SwiftUI.App {
+    init() {
+        _ = RealmManager.shared
+    }
     
     var body: some Scene {
         WindowGroup {
-            AuthStarterView()
+        AuthStarterView()
+//             MainView()
+//                 .environment(\.realmConfiguration, RealmManager.shared.getConfiguration())
         }
     }
 }

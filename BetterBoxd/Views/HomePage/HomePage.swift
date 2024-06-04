@@ -123,10 +123,6 @@ struct HomePage: View {
                                 .foregroundColor(.white)
                                 .padding(.horizontal)
                         }
-
-                        
-
-                        
                     }
                 }
                 .sheet(item: $selectedMovie) { movie in
