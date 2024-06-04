@@ -62,7 +62,7 @@ class MoviesViewModel: ObservableObject {
             .handleEvents(receiveOutput: { data in
                 // Print the raw data for debugging
                 if let jsonString = String(data: data, encoding: .utf8) {
-                    print("Raw JSON Response: \(jsonString)")
+//                    print("Raw JSON Response: \(jsonString)")
                 }
             })
             .decode(type: MovieResponse.self, decoder: {
@@ -81,14 +81,19 @@ class MoviesViewModel: ObservableObject {
                 let sevenDaysFromNow = calendar.date(byAdding: .day, value: 7, to: now)!
                 let threeWeeksFromNow = calendar.date(byAdding: .weekOfYear, value: 3, to: now)!
                 
-                self.upcomingMovie = response.results.first(where: { movie in
+                let filteredMovies = response.results.filter { movie in
                     guard let releaseDate = movie.releaseDate else { return false }
                     return releaseDate > sevenDaysFromNow && releaseDate <= threeWeeksFromNow
-                })
+                }
+                
+                if let randomMovie = filteredMovies.randomElement() {
+                    self.upcomingMovie = randomMovie
+                } else {
+                    print("No upcoming movies found in the specified date range.")
+                }
             })
             .store(in: &self.cancellables)
     }
-
 
     
 

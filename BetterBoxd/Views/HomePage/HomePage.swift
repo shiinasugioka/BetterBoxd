@@ -12,11 +12,21 @@ struct HomePage: View {
                     VStack(alignment: .leading, spacing: 16) {
 
                         
+                        Text("Upcoming Movies 🍿")
+                            .font(.headline)
+                            .padding(.horizontal)
+                            .foregroundColor(.white)
+                        // Upcoming Movie
                         if let upcomingMovie = viewModel.upcomingMovie {
-                                        CountdownCard(movie: upcomingMovie, releaseDate: upcomingMovie.releaseDate ?? Date())
-                                            .padding(.horizontal)
+                            CountdownCard(movie: upcomingMovie, releaseDate: upcomingMovie.releaseDate ?? Date())
+                                .padding(.horizontal)
+                                .onTapGesture {
+                                    selectedMovie = upcomingMovie
+                                }
                         } else {
                             Text("Loading...")
+                                .foregroundColor(.white)
+                                .padding()
                                 .onAppear {
                                     if viewModel.upcomingMovie == nil {
                                         viewModel.fetchUpcomingMovie()
