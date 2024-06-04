@@ -4,7 +4,7 @@ struct HomePage: View {
     @ObservedObject var viewModel = MoviesViewModel()
     @State private var selectedMovie: Movie? = nil
     private var userName: String = "UserName"
-
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -21,7 +21,7 @@ struct HomePage: View {
                             .font(.headline)
                             .padding(.horizontal)
                             .foregroundColor(.white)
-
+                        
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 10) {
                                 ForEach(viewModel.popularMovies) { movie in
@@ -39,7 +39,7 @@ struct HomePage: View {
                             .font(.headline)
                             .padding(.horizontal)
                             .foregroundColor(.white)
-
+                        
                         if !viewModel.filteredUpcomingMovies.isEmpty {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 10) {
@@ -67,7 +67,7 @@ struct HomePage: View {
                             .font(.headline)
                             .padding(.horizontal)
                             .foregroundColor(.white)
-
+                        
                         if !viewModel.favoriteMovies.isEmpty {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 10) {
@@ -85,13 +85,13 @@ struct HomePage: View {
                                 .foregroundColor(.white)
                                 .padding(.horizontal)
                         }
-
+                        
                         // Movies on Your Watchlist
                         Text("Movies on Your Watchlist 📝")
                             .font(.headline)
                             .padding(.horizontal)
                             .foregroundColor(.white)
-
+                        
                         if !viewModel.watchlistMovies.isEmpty {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 10) {
@@ -109,9 +109,9 @@ struct HomePage: View {
                                 .foregroundColor(.white)
                                 .padding(.horizontal)
                         }
-
                         
-
+                        
+                        
                         
                     }
                 }

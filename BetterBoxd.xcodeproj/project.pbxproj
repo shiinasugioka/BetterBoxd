@@ -12,19 +12,31 @@
 		BB6067992C09174500F9195A /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6067982C09174500F9195A /* MovieDetailView.swift */; };
 		BB9D9A462C0EA6560044634D /* CountdownCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9D9A452C0EA6560044634D /* CountdownCard.swift */; };
 		DB2B302D2C0E8F6E000091D7 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B302C2C0E8F6E000091D7 /* VisualEffectBlur.swift */; };
-		DB34779B2C0E96D4008AC00E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DB34779A2C0E96D4008AC00E /* Realm */; };
-		DB34779D2C0E96D4008AC00E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DB34779C2C0E96D4008AC00E /* RealmSwift */; };
 		DB34779F2C0E9DCD008AC00E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB34779E2C0E9DCD008AC00E /* Models.swift */; };
+		DB3477A42C0ED59C008AC00E /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3477A32C0ED59C008AC00E /* RealmManager.swift */; };
+		DB3477A72C0EEC58008AC00E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = DB3477A62C0EEC58008AC00E /* Realm */; };
 		DB419A952BFBC0FF00C676FC /* BetterBoxdApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */; };
 		DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A982BFBC10200C676FC /* Assets.xcassets */; };
 		DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB419A9B2BFBC10200C676FC /* Preview Assets.xcassets */; };
-		DB55D3362C0938D6003647CA /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB55D3352C0938D6003647CA /* info.plist */; };
 		DBE4C0B02C01368D001B06CA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0AF2C01368D001B06CA /* Colors.swift */; };
 		DBE4C0B52C013838001B06CA /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0B42C013838001B06CA /* HomePage.swift */; };
 		DBE4C0B72C0683CD001B06CA /* MoviesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0B62C0683CD001B06CA /* MoviesPage.swift */; };
 		DBE4C0B92C0683DA001B06CA /* ProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0B82C0683DA001B06CA /* ProfilePage.swift */; };
 		DBE4C0BB2C068552001B06CA /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4C0BA2C068552001B06CA /* MainView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DB3477A12C0ED50D008AC00E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		BB121E622C08F97C00D00A5E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = BetterBoxd/Views/Movie.swift; sourceTree = SOURCE_ROOT; };
@@ -33,6 +45,7 @@
 		BB9D9A452C0EA6560044634D /* CountdownCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownCard.swift; sourceTree = "<group>"; };
 		DB2B302C2C0E8F6E000091D7 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		DB34779E2C0E9DCD008AC00E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		DB3477A32C0ED59C008AC00E /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		DB419A912BFBC0FF00C676FC /* BetterBoxd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterBoxd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB419A942BFBC0FF00C676FC /* BetterBoxdApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterBoxdApp.swift; sourceTree = "<group>"; };
 		DB419A982BFBC10200C676FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,8 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB34779D2C0E96D4008AC00E /* RealmSwift in Frameworks */,
-				DB34779B2C0E96D4008AC00E /* Realm in Frameworks */,
+				DB3477A72C0EEC58008AC00E /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +97,7 @@
 				DB419A982BFBC10200C676FC /* Assets.xcassets */,
 				DB419A9A2BFBC10200C676FC /* Preview Content */,
 				DB55D3352C0938D6003647CA /* info.plist */,
+				DB3477A32C0ED59C008AC00E /* RealmManager.swift */,
 			);
 			path = BetterBoxd;
 			sourceTree = "<group>";
@@ -170,6 +183,7 @@
 				DB419A8D2BFBC0FF00C676FC /* Sources */,
 				DB419A8E2BFBC0FF00C676FC /* Frameworks */,
 				DB419A8F2BFBC0FF00C676FC /* Resources */,
+				DB3477A12C0ED50D008AC00E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,8 +191,7 @@
 			);
 			name = BetterBoxd;
 			packageProductDependencies = (
-				DB34779A2C0E96D4008AC00E /* Realm */,
-				DB34779C2C0E96D4008AC00E /* RealmSwift */,
+				DB3477A62C0EEC58008AC00E /* Realm */,
 			);
 			productName = BetterBoxd;
 			productReference = DB419A912BFBC0FF00C676FC /* BetterBoxd.app */;
@@ -227,7 +240,6 @@
 			files = (
 				DB419A9C2BFBC10200C676FC /* Preview Assets.xcassets in Resources */,
 				DB419A992BFBC10200C676FC /* Assets.xcassets in Resources */,
-				DB55D3362C0938D6003647CA /* info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB3477A42C0ED59C008AC00E /* RealmManager.swift in Sources */,
 				DB34779F2C0E9DCD008AC00E /* Models.swift in Sources */,
 				BB121E632C08F97C00D00A5E /* Movie.swift in Sources */,
 				DBE4C0B52C013838001B06CA /* HomePage.swift in Sources */,
@@ -470,15 +483,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DB34779A2C0E96D4008AC00E /* Realm */ = {
+		DB3477A62C0EEC58008AC00E /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = DB3477992C0E96D4008AC00E /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
-		};
-		DB34779C2C0E96D4008AC00E /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DB3477992C0E96D4008AC00E /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

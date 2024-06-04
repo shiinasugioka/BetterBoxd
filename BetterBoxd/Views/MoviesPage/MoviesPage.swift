@@ -84,9 +84,9 @@ struct MoviesPage: View {
                             .padding(.horizontal)
                             .foregroundColor(.white)
                         
-
+                        
                         MovieHighlightCard(movie: viewModel.popularMovies.first ?? Movie(id: 3, title: "Shutter Island", overview: "In 1954, a U.S. Marshal investigates the disappearance of a murderer, who escaped from a hospital for the criminally insane.", posterPath: "/52d8Y2aE2xUJd7Qkq6Yv0UMu3fh.jpg", releaseDate: nil))
-
+                        
                             .padding(.horizontal)
                         // Popular Movies
                         Text("Popular Movies 🍿")
@@ -201,7 +201,7 @@ struct MovieHighlightCard: View {
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     ),
-                    lineWidth: 2
+                    lineWidth: 4
                 )
         )
     }
