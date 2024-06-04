@@ -27,6 +27,15 @@ struct ProfilePage: View {
                         .font(.body)
                         .foregroundColor(.foregroundWhite)
                 }
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
+                        ForEach(viewModel.popularMovies) { movie in
+                            MovieCard(movie: movie)
+                                
+                        }
+                    }
+                    .padding(.horizontal)
+                }
                 
                 if !viewModel.reviewedMovies.isEmpty {
                     Text("Reviewed Movies")

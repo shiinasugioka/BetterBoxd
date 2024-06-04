@@ -48,6 +48,9 @@ class MoviesViewModel: ObservableObject {
         decoder.keyDecodingStrategy = .useDefaultKeys
         return decoder
     }()
+    
+
+    
     func fetchReviewedMovies(for userId: String) {
         let realm = try! Realm()
         let reviews = realm.objects(Review.self).filter("profile.id == %@", userId)
@@ -274,3 +277,4 @@ extension DateFormatter {
         return formatter
     }()
 }
+
