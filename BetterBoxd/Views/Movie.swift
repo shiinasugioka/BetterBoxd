@@ -7,9 +7,18 @@ struct Movie: Identifiable, Codable {
     let title: String
     let overview: String
     let posterPath: String?
+    let backgroundPath: String?
 
     var posterURL: URL? {
         if let path = posterPath {
+            return URL(string: "https://image.tmdb.org/t/p/w500\(path)")
+        }
+        return nil
+    }
+
+    
+    var backgroundURL: URL? {
+        if let path = backgroundPath {
             return URL(string: "https://image.tmdb.org/t/p/w500\(path)")
         }
         return nil
@@ -20,6 +29,7 @@ struct Movie: Identifiable, Codable {
         case title
         case overview
         case posterPath = "poster_path"
+        case backgroundPath = "backdrop_path"
     }
 }
 
