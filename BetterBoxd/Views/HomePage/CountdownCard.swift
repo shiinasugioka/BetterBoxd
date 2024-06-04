@@ -58,7 +58,7 @@ struct CountdownCard: View {
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     ),
-                    lineWidth: 2
+                    lineWidth: 3
                 )
         )
     }
